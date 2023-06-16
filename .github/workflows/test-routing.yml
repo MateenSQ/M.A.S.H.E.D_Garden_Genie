@@ -2,7 +2,7 @@ name: Routing Tests
 on:
   push:
     branches:
-      - routing
+      - dev
 
 jobs:
   routing_tests:
