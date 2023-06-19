@@ -1,0 +1,21 @@
+:root {
+    --bgcolor: #F3FFF9
+}
+
+body {
+    background-color: var(--bgcolor);
+}
+
+.home {
+    background-image: url('../../images/Background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+   }
+
+   .logo {
+    height: 10%;
+    width: 10%
+   }
