@@ -13,8 +13,21 @@ const Accessibility = ({ handleChange }) => {
           onChange={handleChange("mobility")}
           name="mobility"
         >
-          <option>Yes</option>
-          <option>No</option>
+        <div className="form-check">
+  <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+  <label className="form-check-label" htmlFor="flexRadioDefault1">
+    Default radio
+  </label>
+</div>
+<div className="form-check">
+  <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked />
+  <label className="form-check-label" htmlFor="flexRadioDefault2">
+    Default checked radio
+  </label>
+</div>
+
+          {/* { <option>Yes</option>
+          <option>No</option> } */}
         </Form.Control>
       </Form.Group>
     </div>
