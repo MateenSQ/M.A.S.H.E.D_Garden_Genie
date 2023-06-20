@@ -1,16 +1,21 @@
 import logo from "../../images/Logo.png";
 //import "bootstrap/dist/css/bootstrap.min.css";
 import "./Results.css";
+import { Link } from 'react-router-dom'
+
 
 function Results() {
   return (
     <>
+    
       <div className="home">
-        <img src={logo} alt="Logo" className="logo img-fluid" />;
-        <h5>Presenting your personalised gardening findings</h5>
-      </div>
+        <img src={logo} alt="Logo" className="logo img-fluid" />
+        <div className="header">
+     <h5>Presenting your personalised gardening findings</h5>
+     </div>
+     
 
-      <div className="row align-items-center ">
+      <div className="row align-items-center">
         <div className="card-group">
           <div className="card">
             <img
@@ -20,6 +25,7 @@ function Results() {
             />
             <div className="card-body">
               <h3 className="card-title">Sunflower</h3>
+              <Link to="plantinfo" className="btn btn-primary stretched-link">Go to plant</Link>
             </div>
           </div>
           <div className="card">
@@ -30,6 +36,7 @@ function Results() {
             />
             <div className="card-body">
               <h3 className="card-title">Lavender</h3>
+              <Link to="plantinfo" className="btn btn-primary stretched-link">Go to plant</Link>
             </div>
           </div>
           <div className="card">
@@ -40,9 +47,11 @@ function Results() {
             />
             <div className="card-body">
               <h3 className="card-title">Hydrangea</h3>
+              <Link to="plantinfo" className="btn btn-primary stretched-link">Go to plant</Link>
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
