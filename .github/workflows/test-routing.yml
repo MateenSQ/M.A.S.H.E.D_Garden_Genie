@@ -19,7 +19,6 @@ jobs:
 
       - name: Start local server
         run: npm start
-        background: true
 
       - name: Wait for server
         run: sleep 10
