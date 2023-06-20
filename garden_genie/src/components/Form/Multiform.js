@@ -1,12 +1,11 @@
 import React, {useState} from "react";
-import { useNavigate } from 'react-router-dom';
 import Time from "./Time";
 import Space from "./Space";
 import Region from "./Region";
 import Accessibility from "./Accessibility";
 import Budget from "./Budget";
 
-function Multiform() {
+function Multiform(props) {
 
 const [values, setValues] = useState({
   time: "",
@@ -17,8 +16,6 @@ const [values, setValues] = useState({
 });
 
 const [step, setStep] = useState(1);
-
-const navigate = useNavigate();
 
 const nextStep = () => {
   if (step < 5) {
@@ -39,9 +36,10 @@ const handleChange = (option) => (e) => {
   setValues({ ...values, [option]: e.target.value });
 };
 
+ 
 const handleSubmit = () => {
-  // Perform any necessary form validation or processing here
-  navigate('/results');
+  console.log(values);
+  props.onFormSubmit(values);
 };
 
 
