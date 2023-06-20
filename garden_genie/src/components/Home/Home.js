@@ -1,4 +1,4 @@
-import logo from '../../images/Logo.png'
+import logo from '../../images/Logo.png';
 import { Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './Home.css'
