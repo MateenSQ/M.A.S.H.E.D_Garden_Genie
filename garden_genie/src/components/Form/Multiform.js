@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { useNavigate } from 'react-router-dom';
 import Time from "./Time";
 import Space from "./Space";
 import Region from "./Region";
@@ -17,11 +18,15 @@ const [values, setValues] = useState({
 
 const [step, setStep] = useState(1);
 
+const navigate = useNavigate();
+
 const nextStep = () => {
   if (step < 5) {
     setStep(step + 1);
   } 
-  //else if(step === 5) 
+  else if(step === 5) {
+    handleSubmit();
+  }
 };
 
 const prevStep = () => {
@@ -34,9 +39,10 @@ const handleChange = (option) => (e) => {
   setValues({ ...values, [option]: e.target.value });
 };
 
-
-
-
+const handleSubmit = () => {
+  // Perform any necessary form validation or processing here
+  navigate('/results');
+};
 
 
     return (
@@ -45,11 +51,11 @@ const handleChange = (option) => (e) => {
         <div className="card p-3 w-50 mt-5">
           {
             {
-              1: <Time />,
-              2: <Space />,
-              3: <Region />,
-              4: <Accessibility />,
-              5: <Budget />,
+              1: <Time handleChange={handleChange} />,
+              2: <Space handleChange={handleChange} />,
+              3: <Region handleChange={handleChange} />,
+              4: <Accessibility handleChange={handleChange} />,
+              5: <Budget handleChange={handleChange} />,
             }[step]
           }
           <div className="d-flex justify-content-around px-5 mt-5">

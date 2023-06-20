@@ -8,15 +8,13 @@ const Budget = ({ handleChange }) => {
       
       <Form.Group className="w-75 mt-4">
         <Form.Control
-          placeholder="What is your total budget?"
+          placeholder="Are you facing budget constraints that could limit your gardening??"
           as="select"
           onChange={handleChange("budget")}
           name="budget"
         >
-          <option>Below £50</option>
-          <option>£50 to £100</option>
-          <option>£100 to £200</option>
-          <option>£200 +</option>
+          <option>Yes</option>
+          <option>No</option>
         </Form.Control>
       </Form.Group>
     </div>
