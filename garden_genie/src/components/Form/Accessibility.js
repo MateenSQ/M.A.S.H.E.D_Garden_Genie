@@ -6,29 +6,31 @@ const Accessibility = ({ handleChange }) => {
     <div className="d-flex flex-column align-items-center">
       <h2>Mobility</h2>
       
-      <Form.Group className="w-75 mt-4">
-        <Form.Control
-          placeholder="Do you have any mobility difficulties?"
-          as="select"
-          onChange={handleChange("mobility")}
-          name="mobility"
+      <Form.Group controlId = "accessibility" className="w-75 mt-4">
+        <Form.Check
+        value="yes"
+        type="radio"
+          label="Do you have any mobility difficulties?"
+          onChange={handleChange("accessibility")}
+          checked={accessibility === "yes"}
+
         >
-        <div className="form-check">
+       {/* <div className="form-check"> 
   <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
   <label className="form-check-label" htmlFor="flexRadioDefault1">
-    Default radio
+    Yes
   </label>
-</div>
+ </div>
 <div className="form-check">
   <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked />
   <label className="form-check-label" htmlFor="flexRadioDefault2">
     Default checked radio
   </label>
-</div>
+</div> */}
 
           {/* { <option>Yes</option>
           <option>No</option> } */}
-        </Form.Control>
+        </Form.Check>
       </Form.Group>
     </div>
   );
