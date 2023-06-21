@@ -49,10 +49,10 @@ const handleSubmit = () => {
         <div className="card p-3 w-50 mt-5">
           {
             {
-              1: <Time handleChange={handleChange} />,
+              1: <Time handleChange={handleChange} values={values}/>,
               2: <Space handleChange={handleChange} />,
-              3: <Region handleChange={handleChange} />,
-              4: <Accessibility handleChange={handleChange} />,
+              3: <Region handleChange={handleChange} values={values}/>,
+              4: <Accessibility handleChange={handleChange} values={values} />,
               5: <Budget handleChange={handleChange} />,
             }[step]
           }

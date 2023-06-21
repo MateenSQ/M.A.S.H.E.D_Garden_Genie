@@ -1,22 +1,39 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-const Region = ({ handleChange }) => {
+const Region = ({ handleChange, values }) => {
   return (
     <div className="d-flex flex-column align-items-center">
       <h2>Region</h2>
-      
-      <Form.Group className="w-75 mt-4">
-        <Form.Control
-          placeholder="What is your location?"
-          as="select"
-          onChange={handleChange("region")}
-          name="region"
+      <p>What is your location?</p>
+      <Form.Group controlId = "region" className="w-75 mt-4">
+        <Form.Check
+        value="north"
+        type="radio"
+        label="North"
+        onChange={handleChange("region")}
+        checked={values.region === "north"}
+        aria-labelledby="Radio button choice for North"
         >
-          <option>North</option>
-          <option>Midlands</option>
-          <option>South</option>
-        </Form.Control>
+        </Form.Check>
+        <Form.Check
+        value="midlands"
+        type="radio"
+        label="Midlands"
+        onChange={handleChange("region")}
+        checked={values.region === "midlands"}
+        aria-labelledby="Radio button choice for Midlands"
+        >
+        </Form.Check>
+        <Form.Check
+        value="south"
+        type="radio"
+        label="South"
+        onChange={handleChange("region")}
+        checked={values.region === "south"}
+        aria-labelledby="Radio button choice for South"
+        >
+        </Form.Check>
       </Form.Group>
     </div>
   );
