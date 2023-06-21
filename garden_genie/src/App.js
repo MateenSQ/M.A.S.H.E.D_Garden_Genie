@@ -4,6 +4,7 @@ import Multiform from './components/Form/Multiform.js'
 import Results from './components/Results/Results.js'
 import PlantInfo from './components/PlantInfo/PlantInfo.js'
 
+
 function App() {
 
   const navigate = useNavigate();
@@ -17,6 +18,7 @@ function App() {
       <Route path='form' element={<Multiform onFormSubmit={handleFormSubmit} />}></Route>
       <Route path='results' element={<Results />}></Route>
       <Route path='plant-info' element={<PlantInfo />}></Route>
+
     </Routes>
   );
 }
