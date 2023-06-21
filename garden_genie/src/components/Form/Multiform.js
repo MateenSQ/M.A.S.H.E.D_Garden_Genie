@@ -50,10 +50,10 @@ const handleSubmit = () => {
           {
             {
               1: <Time handleChange={handleChange} values={values}/>,
-              2: <Space handleChange={handleChange} />,
+              2: <Space handleChange={handleChange} values={values} />,
               3: <Region handleChange={handleChange} values={values}/>,
               4: <Accessibility handleChange={handleChange} values={values} />,
-              5: <Budget handleChange={handleChange} />,
+              5: <Budget handleChange={handleChange} values={values}/>,
             }[step]
           }
           <div className="d-flex justify-content-around px-5 mt-5">
