@@ -26,7 +26,7 @@ function Results() {
             <div className="card-body">
               <h3 className="card-title">Sunflower</h3>
  
-              <Link to="plantinfo" className="btn btn-primary stretched-link">Go to plant</Link>
+              <Link to="plant-info" className="btn btn-primary stretched-link">Go to plant</Link>
  
             </div>
           </div>
@@ -50,7 +50,7 @@ function Results() {
             <div className="card-body">
               <h3 className="card-title">Hydrangea</h3>
 
-              <Link to="plantinfo" className="btn btn-primary stretched-link">Go to plant</Link>
+              <Link to="plant-info" className="btn btn-primary stretched-link">Go to plant</Link>
 
             </div>
           </div>

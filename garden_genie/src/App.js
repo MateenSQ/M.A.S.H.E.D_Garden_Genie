@@ -12,6 +12,8 @@ function App() {
     navigate("/results", { state: values });
   };
 
+  // useNavigate for results to plant-info
+
   return (
     <Routes>
       <Route path='/' element={<Home />}></Route>
