@@ -11,7 +11,7 @@ function App() {
   const handleFormSubmit = (values) => {
     navigate("/results", { state: values });
   };
-
+  
   // useNavigate for results to plant-info
 
   return (
