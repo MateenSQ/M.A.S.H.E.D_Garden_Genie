@@ -2,6 +2,7 @@ import logo from "../../images/Logo.png";
 //import "bootstrap/dist/css/bootstrap.min.css";
 import "./Results.css";
 import Card from './Cards.js'
+import { Link } from 'react-router-dom'
 
 function Results( props ) {
   return (
@@ -38,6 +39,11 @@ function Results( props ) {
 
         </div>
       </div>
+      <Link to="../form">
+          <button id="get-started" aria-label="Button that leads to Form">
+            Back
+          </button>
+        </Link>
 
     </div>
     
