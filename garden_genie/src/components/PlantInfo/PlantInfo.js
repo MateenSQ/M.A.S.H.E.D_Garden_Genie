@@ -2,10 +2,10 @@ import logo from "../../images/Logo.png";
 import "./PlantInfo.css";
 import { Link } from "react-router-dom";
 
-function PlantInfo() {
+function PlantInfo(props) {
   return (
     <div className="home">
-      <img src={logo} alt="Logo" className="logo img-fluid" />;
+      <img src={logo} alt="Logo" className="logo img-fluid" onClick={props.handleLogoClick}/>
       {/* <h5>Plants Plants Plants</h5> */}
       <div className="row-align-items-center ">
         <div className="card-group">

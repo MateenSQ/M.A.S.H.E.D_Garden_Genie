@@ -7,7 +7,7 @@ function Results( props ) {
   return (
 
     <div className="home">
-        <img src={logo} alt="Logo" className="logo img-fluid" />
+        <img src={logo} alt="Logo" className="logo img-fluid" onClick={props.handleLogoClick}/>
         <div className="header">
           <h5>Presenting your personalised gardening findings</h5>
         </div>

@@ -4,6 +4,7 @@ import Space from "./Space";
 import Region from "./Region";
 import Accessibility from "./Accessibility";
 import Budget from "./Budget";
+import logo from "../../images/Logo.png";
 
 function Multiform(props) {
 
@@ -44,7 +45,9 @@ const handleSubmit = () => {
 
 
     return (
+      
       <div className="bg-dark vh-100">
+        <img src={logo} alt="Logo" className="logo img-fluid" onClick={props.handleLogoClick}/>
       <div className="container d-flex justify-content-center align-items-center">
         <div className="card p-3 w-50 mt-5">
           {
