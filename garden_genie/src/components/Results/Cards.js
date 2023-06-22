@@ -5,8 +5,8 @@ function Card(props) {
     console.log(props)
 
   return (
-<Link to="plant-info">
-    <div className="card">
+
+    <div className="card" onClick={props.onClick}>
       <img
         src={props.imgSrc}
         className="card-img-top"
@@ -16,7 +16,7 @@ function Card(props) {
         <h3 className="card-title">{props.plantName}</h3>
       </div>
     </div>
-</Link>
+
   );
 }
 
