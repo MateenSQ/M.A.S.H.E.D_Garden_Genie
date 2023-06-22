@@ -11,12 +11,16 @@ function App() {
   const handleFormSubmit = (values) => {
     navigate("/results", { state: values });
   };
+  
+  const handleResultsClick = () => {
+    navigate("/plant-info");
+  };
 
   return (
     <Routes>
       <Route path='/' element={<Home />}></Route>
       <Route path='form' element={<Multiform onFormSubmit={handleFormSubmit} />}></Route>
-      <Route path='results' element={<Results />}></Route>
+      <Route path='results' element={<Results handleResultsClick={handleResultsClick} />}></Route>
       <Route path='plant-info' element={<PlantInfo />}></Route>
 
     </Routes>
