@@ -26,12 +26,12 @@ const Time = ({ handleChange, values }) => {
         >
         </Form.Check>
         <Form.Check
-        value="noTimeCostraints"
+        value="noTimeConstraints"
         type="radio"
-        label="I don't have time costraints"
+        label="I don't have time constraints"
         onChange={handleChange("time")}
-        checked={values.time === "noTimeCostraints"}
-        aria-labelledby="Radio button choice for I don't have time costraints"
+        checked={values.time === "noTimeConstraints"}
+        aria-labelledby="Radio button choice for I don't have time constraints"
         >
         </Form.Check>
        </Form.Group>
