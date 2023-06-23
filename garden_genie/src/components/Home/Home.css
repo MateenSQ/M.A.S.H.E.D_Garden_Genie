@@ -1,28 +1,53 @@
-/* :root {
-    --bgcolor: #F3FFF9
-}
+.centered-button {
+    display: block;
+    margin: 0 auto;
+    background-color:  #008558;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .green-button:hover {
+    background-color: transparent;
+    border-color: #2f4b3f;
+    color: #2f4b3f;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .larger-button {
+    font-size: 20px;
+    padding: 12px 24px;
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  
+  .home {
+    display: grid;
+    place-items: center;
+   
+  }
+  
+  .home-title {
+    font-size: 2rem;
+    text-align: center;
+    color: #2f4b3f;
+  }
 
-body {
-    background-color: var(--bgcolor);
-    margin: 0;
-}
-
-.home {
-    background-image: url('../../images/Background.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    position: sticky;
-    height: 100vh;
-   }
-
-   .logo {
-    max-width: 30%;
+  .welcome {
+    font-size: 3rem;
+    color: #2F4B3F
+  }
+  
+  #welcome-logo {
+    
+    max-width: 600px; 
     height: auto;
-   }
-
-   .card img {
-    width: 100%;
-    height: 80%;
-    object-fit: cover;
-  } */
+  }
+  
