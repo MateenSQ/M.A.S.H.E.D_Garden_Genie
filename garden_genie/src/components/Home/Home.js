@@ -7,13 +7,15 @@ function Home() {
 
     return (
       <div className="home">
-        <h2>Welcome to</h2>
-        <img src={logo} alt='Logo' className="logo img-fluid"/>
-        <p>Making your gardening dreams bloom!</p>
-        <Link to="form">
-          <button id="get_started" aria-label="Button that leads to Form">Get started</button>
-        </Link>
+        <h2 className="welcome">Welcome to</h2>
+        <div className="logo-container"> 
+        <img src={logo} alt='Logo' className="logo" id= "welcome-logo"/>
         </div>
+        <p class= "home-title">Making your gardening dreams bloom!</p>
+        <Link to="form">
+          <button id="get_started" class="centered-button btn btn-primary btn-lg larger-button green-button" data-toggle="button" aria-pressed="false" aria-label="Button that leads to Form" >Get started</button>
+        </Link>
+       </div>
     );
   }
   

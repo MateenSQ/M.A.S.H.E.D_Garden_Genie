@@ -83,7 +83,7 @@ const handleSubmit = () => {
 
 
     return (
-      <div className="bg-dark vh-100">
+      <div className="vh-100">
       <div className="container d-flex justify-content-center align-items-center">
         <div className="card p-3 w-50 mt-5">
           {
