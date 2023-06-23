@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Time from "./Time";
 import Space from "./Space";
 import Region from "./Region";
@@ -7,15 +7,54 @@ import Budget from "./Budget";
 
 function Multiform(props) {
 
-const [values, setValues] = useState({
-  time: "",
-  space: "",
-  region: "",
-  accessibility: "",
-  budget: "",
-});
+  const [step, setStep] = useState(1);
 
-const [step, setStep] = useState(1);
+// || Comparing the plants to user input
+
+/*
+Making a filter based on time
+
+user inputs:
+- minimum
+- moderate
+- noTimeConstraints
+
+Database choices:
+- Watering
+- Maintenance
+
+1. Get information from database
+  - async function that get uses fetch() ✔
+
+2. Compare userInput to database information
+  - The data recieved from the database will enter a state variable - it will become objects within an array
+    - Depending on the user input, we need to find plants that have specific properties
+    -
+
+3. Return plants index that go through filter for further selection
+
+*/
+
+useEffect(() => {
+ async function getData() {
+   const response = await fetch('http://localhost:5000/api/data')
+   const data = await response.json()
+
+   props.setPlants(data)
+   console.log(props.plants)
+  }
+    getData()
+}, [props.values.budget])
+
+
+
+
+
+
+
+
+ // || Setting the steps 
+
 
 const nextStep = () => {
   if (step < 5) {
@@ -33,13 +72,13 @@ const prevStep = () => {
 };
 
 const handleChange = (option) => (e) => {
-  setValues({ ...values, [option]: e.target.value });
+  props.setValues({ ...props.values, [option]: e.target.value });
 };
 
  
 const handleSubmit = () => {
-  console.log(values);
-  props.onFormSubmit(values);
+  console.log(props.values);
+  props.onFormSubmit(props.values);
 };
 
 
@@ -49,11 +88,11 @@ const handleSubmit = () => {
         <div className="card p-3 w-50 mt-5">
           {
             {
-              1: <Time handleChange={handleChange} values={values}/>,
-              2: <Space handleChange={handleChange} values={values} />,
-              3: <Region handleChange={handleChange} values={values}/>,
-              4: <Accessibility handleChange={handleChange} values={values} />,
-              5: <Budget handleChange={handleChange} values={values}/>,
+              1: <Time handleChange={handleChange} values={props.values}/>,
+              2: <Space handleChange={handleChange} values={props.values} />,
+              3: <Region handleChange={handleChange} values={props.values}/>,
+              4: <Accessibility handleChange={handleChange} values={props.values} />,
+              5: <Budget handleChange={handleChange} values={props.values}/>,
             }[step]
           }
           <div className="d-flex justify-content-around px-5 mt-5">

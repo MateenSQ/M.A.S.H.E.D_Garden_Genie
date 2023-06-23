@@ -3,7 +3,68 @@ import logo from "../../images/Logo.png";
 import "./Results.css";
 import Card from './Cards.js'
 
-function Results( props ) {
+function Results(props) {
+
+/*
+Making a filter based on time
+
+user inputs:
+- minimum
+- moderate
+- noTimeConstraints
+
+Database choices:
+- Watering
+- Maintenance
+
+1. Get information from database
+  - async function that get uses fetch() ✔
+
+2. Compare userInput to database information
+  - The data recieved from the database will enter a state variable - it will become objects within an array
+    - Depending on the user input, we need to find plants that have specific properties
+    -
+
+3. Return plants index that go through filter for further selection
+
+*/
+
+
+// console.log(props.plants[0].Properties.Maintenance)
+// const plantsArray = props.plants;
+// console.log(plantsArray);
+// for (let i=0; i<props.plants.length; i++) {
+//     
+//     console.log(i);
+//     console.log(props.plants[i].Properties.Maintenance);
+// }
+console.log(props.plants.filter((item) => {return item.Properties.Maintenance === 'Low'}));
+
+// function filterTime() {
+//   let filteredArray = []
+
+//   let time = props.values.time
+  
+//     if (time === 'minimum') {
+
+//       filteredArray = props.plants.filter((item) => {
+//           return item.Properties.Maintenance === 'Low'
+//         }),
+//         console.log(filteredArray);
+//     }
+//     return filteredArray;
+// }
+
+  // filterTime();
+
+  /*  
+                                  Watering              Maintenance                  
+  minimum = Low && Low
+  moderate
+  
+  */
+
+
   return (
 
     <div className="home">
