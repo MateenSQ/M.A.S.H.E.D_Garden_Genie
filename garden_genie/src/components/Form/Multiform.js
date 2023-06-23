@@ -11,19 +11,6 @@ function Multiform(props) {
 
 // || Comparing the plants to user input
 
-useEffect(() => {
- async function getData() {
-   const response = await fetch('http://localhost:5000/api/data')
-   const data = await response.json()
-
-   props.setPlants(data)
-   console.log(props.plants)
-  }
-    getData()
-}, [props.values.budget])
-
-
-
 /*
 Making a filter based on time
 
@@ -47,6 +34,21 @@ Database choices:
 3. Return plants index that go through filter for further selection
 
 */
+
+useEffect(() => {
+ async function getData() {
+   const response = await fetch('http://localhost:5000/api/data')
+   const data = await response.json()
+
+   props.setPlants(data)
+   console.log(props.plants)
+  }
+    getData()
+}, [props.values.budget])
+
+
+
+
 
 
 
