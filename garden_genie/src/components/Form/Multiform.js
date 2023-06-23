@@ -7,7 +7,7 @@ import Budget from "./Budget";
 
 function Multiform(props) {
 
-  const [nothing, setNothing] = useState(0)
+  const [step, setStep] = useState(1);
 
 // || Comparing the plants to user input
 
@@ -18,7 +18,10 @@ useEffect(() => {
 
    props.setPlants(data)
    console.log(props.plants)
-  } getData() }, [nothing])
+  }
+    getData()
+}, [props.values.budget])
+
 
 
 /*
@@ -51,8 +54,6 @@ Database choices:
  // || Setting the steps 
 
 
-const [step, setStep] = useState(1);
-
 const nextStep = () => {
   if (step < 5) {
     setStep(step + 1);
@@ -76,7 +77,6 @@ const handleChange = (option) => (e) => {
 const handleSubmit = () => {
   console.log(props.values);
   props.onFormSubmit(props.values);
-  setNothing(nothing + 1)
 };
 
 
