@@ -2,6 +2,7 @@ import logo from "../../images/Logo.png";
 //import "bootstrap/dist/css/bootstrap.min.css";
 import "./Results.css";
 import Card from './Cards.js'
+import { Link } from 'react-router-dom'
 
 function Results(props) {
 
@@ -68,7 +69,7 @@ console.log(props.plants.filter((item) => {return item.Properties.Maintenance ==
   return (
 
     <div className="home">
-        <img src={logo} alt="Logo" className="logo img-fluid" />
+        <img src={logo} alt="Logo" className="logo img-fluid" onClick={props.handleLogoClick}/>
         <div className="header">
           <h5>Presenting your personalised gardening findings</h5>
         </div>
@@ -99,6 +100,11 @@ console.log(props.plants.filter((item) => {return item.Properties.Maintenance ==
 
         </div>
       </div>
+      <Link to="../form">
+          <button id="get-started" aria-label="Button that leads to Form">
+            Back
+          </button>
+        </Link>
 
     </div>
     

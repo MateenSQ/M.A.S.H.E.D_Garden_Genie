@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './Home.css'
 
-function Home() {
+function Home(props) {
 
+
+   
     return (
       <div className="home">
         <h2 className="welcome">Welcome to</h2>
         <div className="logo-container"> 
-        <img src={logo} alt='Logo' className="logo" id= "welcome-logo"/>
+        <img src={logo} alt='Logo' className="logo img-fluid" id= "welcome-logo" onClick={props.handleLogoClick}/>
         </div>
         <p class= "home-title">Making your gardening dreams bloom!</p>
         <Link to="form">
