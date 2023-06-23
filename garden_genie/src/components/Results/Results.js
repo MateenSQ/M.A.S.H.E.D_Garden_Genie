@@ -30,22 +30,32 @@ Database choices:
 */
 
 
-console.log(props.plants[0].Properties.Maintenance)
+// console.log(props.plants[0].Properties.Maintenance)
+// const plantsArray = props.plants;
+// console.log(plantsArray);
+// for (let i=0; i<props.plants.length; i++) {
+//     
+//     console.log(i);
+//     console.log(props.plants[i].Properties.Maintenance);
+// }
+console.log(props.plants.filter((item) => {return item.Properties.Maintenance === 'Low'}));
 
-  // let filteredArray = []
+// function filterTime() {
+//   let filteredArray = []
 
-  // let x = props.values.time
+//   let time = props.values.time
   
-  //   if (x === 'minimum') {
+//     if (time === 'minimum') {
 
-  //     filteredArray = props.plants.filter((item) => {
-  //         return item.Properties.Maintenance === 'Low'
-  //       }),
-  //       console.log(filteredArray)
-  //   }
+//       filteredArray = props.plants.filter((item) => {
+//           return item.Properties.Maintenance === 'Low'
+//         }),
+//         console.log(filteredArray);
+//     }
+//     return filteredArray;
+// }
 
-
-  //filterTime()
+  // filterTime();
 
   /*  
                                   Watering              Maintenance                  
