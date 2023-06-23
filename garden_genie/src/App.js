@@ -36,8 +36,8 @@ function App() {
     <Routes>
 
       <Route path='/' element={<Home handleLogoClick={handleLogoClick}/>}></Route>
-      <Route path='form' element={<Multiform onFormSubmit={handleFormSubmit} values={values} setValues={setValues} plants={plants} setPlants={setPlants}/>}></Route>
-      <Route path='results' element={<Results handleResultsClick={handleResultsClick} plants={plants} values={values}/>}></Route>
+      <Route path='form' element={<Multiform onFormSubmit={handleFormSubmit} values={values} setValues={setValues} plants={plants} setPlants={setPlants} handleLogoClick={handleLogoClick} />}></Route>
+      <Route path='results' element={<Results handleResultsClick={handleResultsClick} plants={plants} values={values} handleLogoClick={handleLogoClick} />}></Route>
       <Route path='plant-info' element={<PlantInfo handleLogoClick={handleLogoClick}/>}></Route>
 
     </Routes>
