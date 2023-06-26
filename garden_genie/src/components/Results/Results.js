@@ -30,40 +30,60 @@ Database choices:
 
 */
 
+function filterTime(item) {
+  if (props.values.time === 'minimum') {
+    return item.Properties.Maintenance === 'Low' && item.Properties.Watering === 'Low'
+  } if (props.values.time === 'moderate') {
+    return (
+    (item.Properties.Maintenance === 'Low' && item.Properties.Watering === 'Low') || 
+    (item.Properties.Maintenance === 'Medium' && item.Properties.Watering === 'Moderate') ||
+    (item.Properties.Maintenance === 'Medium' && item.Properties.Watering === 'Low') ||
+    (item.Properties.Maintenance === 'Low' && item.Properties.Watering === 'Moderate')
+  )}
+}
 
-// console.log(props.plants[0].Properties.Maintenance)
-// const plantsArray = props.plants;
-// console.log(plantsArray);
-// for (let i=0; i<props.plants.length; i++) {
-//     
-//     console.log(i);
-//     console.log(props.plants[i].Properties.Maintenance);
-// }
-console.log(props.plants.filter((item) => {return item.Properties.Maintenance === 'Low'}));
+function filterSpace(item) {
+  if (props.values.space === 'indoors') {
+    return item.Properties.Size === 'Small' && item.Properties.GrowInPot === true && item.Properties.Indoor === true
+} if (props.values.space === 'outdoors pots') {
+    return (
+      (item.Properties.Size === 'Small' && item.Properties.GrowInPot === true) || 
+      (item.Properties.Size === 'Medium' && item.Properties.GrowInPot === true) ||
+      (item.Properties.Size === 'Medium' && item.Properties.GrowInPot === false)
+      )
+  }
+}
 
-// function filterTime() {
-//   let filteredArray = []
+function filterRegion(item) {
+  let plantRegion = item.Properties.Region
+  let userRegion = props.values.region
+  if (userRegion === 'north') {
+    return plantRegion === 'North' || plantRegion === 'All'
+  } if (userRegion === 'midlands') {
+    return plantRegion === 'Midlands' || plantRegion === 'All'
+  }if (userRegion === 'south') {
+    return plantRegion === 'South' || plantRegion === 'All'
+  }
+}
 
-//   let time = props.values.time
+function filterMobility(item) {
+  let plantMaint = item.Properties.Maintenance
+  let plantSize = item.Properties.Size
+  let userChoice = props.values.accessibility // 'yes', 'no'
+  if (userChoice === 'yes') {
+    return (
+      plantSize === 'Small' && plantMaint !== 'High'
+    )
+  }
+}
+
+  let filteredArray = []
+  filteredArray = props.plants.filter(filterTime).filter(filterSpace).filter(filterRegion).filter(filterMobility)
+  console.log(filteredArray)
+
   
-//     if (time === 'minimum') {
 
-//       filteredArray = props.plants.filter((item) => {
-//           return item.Properties.Maintenance === 'Low'
-//         }),
-//         console.log(filteredArray);
-//     }
-//     return filteredArray;
-// }
 
-  // filterTime();
-
-  /*  
-                                  Watering              Maintenance                  
-  minimum = Low && Low
-  moderate
-  
-  */
 
 
   return (
