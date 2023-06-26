@@ -33,25 +33,27 @@ Database choices:
 function filterTime(item) {
   if (props.values.time === 'minimum') {
     return item.Properties.Maintenance === 'Low' && item.Properties.Watering === 'Low'
-  } if (props.values.time === 'moderate') {
+  } else if (props.values.time === 'moderate') {
     return (
     (item.Properties.Maintenance === 'Low' && item.Properties.Watering === 'Low') || 
     (item.Properties.Maintenance === 'Medium' && item.Properties.Watering === 'Moderate') ||
     (item.Properties.Maintenance === 'Medium' && item.Properties.Watering === 'Low') ||
     (item.Properties.Maintenance === 'Low' && item.Properties.Watering === 'Moderate')
   )}
+  return true;
 }
 
 function filterSpace(item) {
   if (props.values.space === 'indoors') {
     return item.Properties.Size === 'Small' && item.Properties.GrowInPot === true && item.Properties.Indoor === true
-} if (props.values.space === 'outdoors pots') {
+} else if (props.values.space === 'outdoors pots') {
     return (
       (item.Properties.Size === 'Small' && item.Properties.GrowInPot === true) || 
       (item.Properties.Size === 'Medium' && item.Properties.GrowInPot === true) ||
       (item.Properties.Size === 'Medium' && item.Properties.GrowInPot === false)
       )
   }
+  return true;
 }
 
 function filterRegion(item) {
@@ -59,11 +61,12 @@ function filterRegion(item) {
   let userRegion = props.values.region
   if (userRegion === 'north') {
     return plantRegion === 'North' || plantRegion === 'All'
-  } if (userRegion === 'midlands') {
+  } else if (userRegion === 'midlands') {
     return plantRegion === 'Midlands' || plantRegion === 'All'
-  }if (userRegion === 'south') {
+  } else if (userRegion === 'south') {
     return plantRegion === 'South' || plantRegion === 'All'
   }
+  return true;
 }
 
 function filterMobility(item) {
@@ -75,17 +78,13 @@ function filterMobility(item) {
       plantSize === 'Small' && plantMaint !== 'High'
     )
   }
+  return true;
 }
 
-  let filteredArray = []
-  filteredArray = props.plants.filter(filterTime).filter(filterSpace).filter(filterRegion).filter(filterMobility)
+  let filteredArray = props.plants.filter(filterTime).filter(filterSpace).filter(filterRegion).filter(filterMobility)
   console.log(filteredArray)
 
   
-
-
-
-
   return (
 
     <div className="home">
