@@ -99,10 +99,6 @@ function filterMobility(item) {
   console.log(props.plants[indexArray[0]]);
 
 
-
-  const handlePlantSelection = () => (e) => {
-    props.setSelectPlant(e.target.value);
-  };
   
   return (
 
@@ -123,7 +119,7 @@ function filterMobility(item) {
           imgSrc={props.plants[indexArray[0]].CardInfo.Image}
           imgAlt={props.plants[indexArray[0]].CardInfo.Name} 
           plantName={props.plants[indexArray[0]].CardInfo.Name}
-          onClick={props.handleResultsClick}
+          onClick= {props.handleSelection}
           />
 
           <Card indexArray

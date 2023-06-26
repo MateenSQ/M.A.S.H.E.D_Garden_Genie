@@ -1,6 +1,7 @@
 import logo from "../../images/Logo.png";
 import "./PlantInfo.css";
 import { Link } from "react-router-dom";
+import Card from '../Results/Cards.js' 
 
 
 // When the user clicks on each card, it takes them to the relevant plant info
@@ -13,6 +14,8 @@ function PlantInfo(props) {
     <div className="home">
       <img src={logo} alt="Logo" className="logo img-fluid" onClick={props.handleLogoClick}/>
       {/* <h5>Plants Plants Plants</h5> */}
+<Card selectPlant={props.selectPlant} />
+
       <div className="row-align-items-center ">
         <div className="card-group">
           <div className="card">

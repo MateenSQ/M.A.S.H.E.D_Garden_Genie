@@ -32,7 +32,7 @@ function App() {
     navigate("/");
   };
   
-  function handleResults() {
+  function handleSelection() {
     const handlePlantSelection = () => (e) => {
       setSelectPlant(e.target.value);
     };
@@ -46,7 +46,7 @@ function App() {
 
       <Route path='/' element={<Home handleLogoClick={handleLogoClick}/>}></Route>
       <Route path='form' element={<Multiform onFormSubmit={handleFormSubmit} values={values} setValues={setValues} plants={plants} setPlants={setPlants} handleLogoClick={handleLogoClick} />}></Route>
-      <Route path='results' element={<Results handleResultsClick={handleResultsClick} plants={plants} values={values} handleLogoClick={handleLogoClick} selectPlant={selectPlant} setSelectPlant={setSelectPlant} />}></Route>
+      <Route path='results' element={<Results handleSelection={handleSelection} plants={plants} values={values} handleLogoClick={handleLogoClick} selectPlant={selectPlant} setSelectPlant={setSelectPlant} />}></Route>
       <Route path='plant-info' element={<PlantInfo handleLogoClick={handleLogoClick} selectPlant={selectPlant} setSelectPlant={setSelectPlant} />}></Route>
 
     </Routes>
