@@ -84,6 +84,17 @@ function filterMobility(item) {
   let filteredArray = props.plants.filter(filterTime).filter(filterSpace).filter(filterRegion).filter(filterMobility)
   console.log(filteredArray)
 
+  let indexArray = [];
+  let randomIndex = 0;
+   while (indexArray.length<3) {
+    randomIndex = (Math.floor(Math.random() * filteredArray.length));
+    if (!indexArray.includes(randomIndex)) {
+      indexArray.push(randomIndex);
+    }
+  }
+  
+  console.log(indexArray[0]);
+  console.log(props.plants[indexArray[0]]);
   
   return (
 
@@ -96,24 +107,28 @@ function filterMobility(item) {
       <div className="row align-items-center">
         <div className="card-group">
 
-          <Card 
-          imgSrc="https://www.almanac.com/sites/default/files/styles/or/public/image_nodes/sunflower-1627193_1920.jpg?itok=td7mL8qA"
-          imgAlt="..."
-          plantName="Sunflower"
+
+          {/* {indexArray.map((item) => <Card key={item.index} />)} */}
+
+
+          <Card indexArray
+          imgSrc={props.plants[indexArray[0]].CardInfo.Image}
+          imgAlt={props.plants[indexArray[0]].CardInfo.Name} 
+          plantName={props.plants[indexArray[0]].CardInfo.Name}
           onClick={props.handleResultsClick}
           />
 
-          <Card 
-          imgSrc="https://cdn.shopify.com/s/files/1/0513/3428/3424/products/oldenglish1.jpg?v=1631357610"
-          imgAlt="..."
-          plantName="Lavender"
+          <Card indexArray
+          imgSrc={props.plants[indexArray[1]].CardInfo.Image}
+          imgAlt={props.plants[indexArray[1]].CardInfo.Name} 
+          plantName={props.plants[indexArray[1]].CardInfo.Name}
           onClick={props.handleResultsClick}
-          />      
+          />
 
-          <Card 
-          imgSrc="https://www.muddytrowel.com/wp-content/uploads/2022/07/hydrangea-blue-2-e1657704030437.jpg"
-          imgAlt="..."
-          plantName="Hydrangea"
+          <Card indexArray
+          imgSrc={props.plants[indexArray[2]].CardInfo.Image}
+          imgAlt={props.plants[indexArray[2]].CardInfo.Name} 
+          plantName={props.plants[indexArray[2]].CardInfo.Name}
           onClick={props.handleResultsClick}
           />
 
