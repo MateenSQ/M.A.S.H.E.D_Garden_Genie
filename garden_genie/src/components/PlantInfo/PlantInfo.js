@@ -2,6 +2,12 @@ import logo from "../../images/Logo.png";
 import "./PlantInfo.css";
 import { Link } from "react-router-dom";
 
+
+// When the user clicks on each card, it takes them to the relevant plant info
+// On click, we get the value of the click which is one of the indexes of the indexArray
+// Store that value in a state 
+// Navigate to the plant info page carrying that state
+
 function PlantInfo(props) {
   return (
     <div className="home">

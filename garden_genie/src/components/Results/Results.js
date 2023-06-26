@@ -93,8 +93,16 @@ function filterMobility(item) {
     }
   }
   
+
+  // setThreePlants(props.plants[indexArray[0]])
   console.log(indexArray[0]);
   console.log(props.plants[indexArray[0]]);
+
+
+
+  const handlePlantSelection = () => (e) => {
+    props.setSelectPlant(e.target.value);
+  };
   
   return (
 

@@ -18,6 +18,10 @@ function App() {
     budget: "",
   });
 
+  const [selectPlant, setSelectPlant] = useState(0);
+
+  // const [threePlants, setThreePlants] = useState([]);
+
   const navigate = useNavigate();
 
   const handleFormSubmit = (values) => {
@@ -28,17 +32,22 @@ function App() {
     navigate("/");
   };
   
-  const handleResultsClick = () => {
-    navigate("/plant-info");
-  };
+  function handleResults() {
+    const handlePlantSelection = () => (e) => {
+      setSelectPlant(e.target.value);
+    };
+    const handleResultsClick = () => {
+      navigate("/plant-info");
+    };
+  }
 
   return (
     <Routes>
 
       <Route path='/' element={<Home handleLogoClick={handleLogoClick}/>}></Route>
       <Route path='form' element={<Multiform onFormSubmit={handleFormSubmit} values={values} setValues={setValues} plants={plants} setPlants={setPlants} handleLogoClick={handleLogoClick} />}></Route>
-      <Route path='results' element={<Results handleResultsClick={handleResultsClick} plants={plants} values={values} handleLogoClick={handleLogoClick} />}></Route>
-      <Route path='plant-info' element={<PlantInfo handleLogoClick={handleLogoClick}/>}></Route>
+      <Route path='results' element={<Results handleResultsClick={handleResultsClick} plants={plants} values={values} handleLogoClick={handleLogoClick} selectPlant={selectPlant} setSelectPlant={setSelectPlant} />}></Route>
+      <Route path='plant-info' element={<PlantInfo handleLogoClick={handleLogoClick} selectPlant={selectPlant} setSelectPlant={setSelectPlant} />}></Route>
 
     </Routes>
   );
