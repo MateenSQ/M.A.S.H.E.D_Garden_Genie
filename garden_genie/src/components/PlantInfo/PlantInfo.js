@@ -1,20 +1,36 @@
 import logo from "../../images/Logo.png";
 import "./PlantInfo.css";
 import { Link } from "react-router-dom";
-import Card from '../Results/Cards.js' 
 
 
-// When the user clicks on each card, it takes them to the relevant plant info
-// On click, we get the value of the click which is one of the indexes of the indexArray
-// Store that value in a state 
-// Navigate to the plant info page carrying that state
+/*
+
+1. When the user clicks on each card, it takes them to the relevant plant info
+  -On click, we get the value of the click which is one of the indexes of the indexArray
+
+2. Store that value in a state 
+
+3. Navigate to the plant info page carrying that state
+
+*/
 
 function PlantInfo(props) {
+
+  console.log('props.selectPlantName:')
+  console.log(props.selectPlantName)
+
+  for (let i = 0; i < props.plants.length; i++) {
+    if (props.plants[i].Name === props.selectPlantName) {
+      console.log('Ladies and Gentlemen, we got him:')
+      console.log(props.plants[i])
+      return props.plants[i]
+    }
+  }
+
   return (
     <div className="home">
       <img src={logo} alt="Logo" className="logo img-fluid" onClick={props.handleLogoClick}/>
       {/* <h5>Plants Plants Plants</h5> */}
-<Card selectPlant={props.selectPlant} />
 
       <div className="row-align-items-center ">
         <div className="card-group">

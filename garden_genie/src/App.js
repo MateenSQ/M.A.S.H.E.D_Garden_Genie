@@ -8,6 +8,8 @@ import PlantInfo from './components/PlantInfo/PlantInfo.js'
 
 function App() {
 
+  // || STATES
+
   const [plants, setPlants] = useState([])
 
   const [values, setValues] = useState({
@@ -18,11 +20,14 @@ function App() {
     budget: "",
   });
 
-  const [selectPlant, setSelectPlant] = useState(0);
+  const [selectPlantName, setSelectPlantName] = useState('');
 
   // const [threePlants, setThreePlants] = useState([]);
 
   const navigate = useNavigate();
+
+
+  // || FUNCTIONS
 
   const handleFormSubmit = (values) => {
     navigate("/results", { state: values });
@@ -32,22 +37,51 @@ function App() {
     navigate("/");
   };
   
+
+  const handlePlantSelection = () => (e) => {
+      setSelectPlantName(e.target.value);
+    };
+
+  const handleResultsClick = () => {
+    navigate("/plant-info");
+  };
+
+
   function handleSelection() {
-    const handlePlantSelection = () => (e) => {
-      setSelectPlant(e.target.value);
-    };
-    const handleResultsClick = () => {
-      navigate("/plant-info");
-    };
+    handlePlantSelection()
+    handleResultsClick()
   }
 
   return (
     <Routes>
 
       <Route path='/' element={<Home handleLogoClick={handleLogoClick}/>}></Route>
-      <Route path='form' element={<Multiform onFormSubmit={handleFormSubmit} values={values} setValues={setValues} plants={plants} setPlants={setPlants} handleLogoClick={handleLogoClick} />}></Route>
-      <Route path='results' element={<Results handleSelection={handleSelection} plants={plants} values={values} handleLogoClick={handleLogoClick} selectPlant={selectPlant} setSelectPlant={setSelectPlant} />}></Route>
-      <Route path='plant-info' element={<PlantInfo handleLogoClick={handleLogoClick} selectPlant={selectPlant} setSelectPlant={setSelectPlant} />}></Route>
+      <Route path='form' element={
+      <Multiform 
+      onFormSubmit={handleFormSubmit} 
+      values={values} setValues={setValues} 
+      plants={plants} setPlants={setPlants} 
+      handleLogoClick={handleLogoClick} 
+      />}>
+      </Route>
+
+      <Route path='results' element={
+      <Results 
+      handleSelection={handleSelection} 
+      plants={plants} 
+      values={values} 
+      handleLogoClick={handleLogoClick} 
+      selectPlantName={selectPlantName}
+      setSelectPlantName={setSelectPlantName}
+      />}>
+      </Route>
+
+      <Route path='plant-info' element={
+      <PlantInfo 
+      plants={plants}
+      handleLogoClick={handleLogoClick} 
+      />}>
+      </Route>
 
     </Routes>
   );

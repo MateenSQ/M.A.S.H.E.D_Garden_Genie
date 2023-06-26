@@ -82,11 +82,11 @@ function filterMobility(item) {
 }
 
   let filteredArray = props.plants.filter(filterTime).filter(filterSpace).filter(filterRegion).filter(filterMobility)
-  console.log(filteredArray)
+ 
 
   let indexArray = [];
   let randomIndex = 0;
-   while (indexArray.length<3) {
+   while (indexArray.length < 3) {
     randomIndex = (Math.floor(Math.random() * filteredArray.length));
     if (!indexArray.includes(randomIndex)) {
       indexArray.push(randomIndex);
@@ -94,10 +94,12 @@ function filterMobility(item) {
   }
   
 
-  // setThreePlants(props.plants[indexArray[0]])
-  console.log(indexArray[0]);
-  console.log(props.plants[indexArray[0]]);
+  // console.log('This is the index array:')
+  // console.log(indexArray);
+  //console.log(props.plants[indexArray[0]]);
 
+  console.log('props.plants.length:')
+  console.log(props.plants.length)
 
   
   return (
@@ -116,10 +118,11 @@ function filterMobility(item) {
 
 
           <Card indexArray
-          imgSrc={props.plants[indexArray[0]].CardInfo.Image}
-          imgAlt={props.plants[indexArray[0]].CardInfo.Name} 
-          plantName={props.plants[indexArray[0]].CardInfo.Name}
-          onClick= {props.handleSelection}
+          imgSrc={filteredArray[indexArray[0]].CardInfo.Image}
+          imgAlt={filteredArray[indexArray[0]].CardInfo.Name} 
+          plantName={filteredArray[indexArray[0]].CardInfo.Name}
+          onClick={props.handleSelection}
+          value={filteredArray[indexArray[0]].Name}
           />
 
           <Card indexArray
@@ -127,6 +130,7 @@ function filterMobility(item) {
           imgAlt={props.plants[indexArray[1]].CardInfo.Name} 
           plantName={props.plants[indexArray[1]].CardInfo.Name}
           onClick={props.handleResultsClick}
+          value={indexArray[1]}
           />
 
           <Card indexArray
@@ -134,6 +138,7 @@ function filterMobility(item) {
           imgAlt={props.plants[indexArray[2]].CardInfo.Name} 
           plantName={props.plants[indexArray[2]].CardInfo.Name}
           onClick={props.handleResultsClick}
+          value={indexArray[2]}
           />
 
         </div>
