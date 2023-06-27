@@ -22,22 +22,25 @@ describe("Routing Tests", () => {
   
 
   it("renders the correct component for the /form path", () => {
-    render(
+    const values = {
+      time: "",
+      space: "",
+      region: "",
+      accessibility: "",
+      budget: "",
+    }
+      
+    const { container } = render(
       <MemoryRouter initialEntries={["/"]}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/form" element={<Multiform />} />
+          <Route path="/form" element={<Multiform values={values}/>} />
         </Routes>
       </MemoryRouter>
     );
 
-    fireEvent(
-      getByText(button, 'Get started'),
-      new MouseEvent('click', {
-        bubbles: true,
-        cancelable: true,
-      }),
-    )
+    const button = container.querySelector('#get_started');
+    fireEvent.click(button);
 
     expect(screen.getByText("Time")).toBeInTheDocument();
   });
