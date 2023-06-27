@@ -3,7 +3,6 @@
 function Card(props) {
 
   return (
-
     <div className="card" onClick={props.onClick}>
       <img
         src={props.imgSrc}
@@ -14,7 +13,6 @@ function Card(props) {
         <h3 className="card-title">{props.plantName}</h3>
       </div>
     </div>
-
   );
 }
 

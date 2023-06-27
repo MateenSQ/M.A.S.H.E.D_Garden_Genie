@@ -41,7 +41,7 @@ Database choices:
 
 useEffect(() => {
  async function getData() {
-   const response = await fetch('http://localhost:5000/api/data')
+   const response = await fetch('https://gardengeniebackend.onrender.com/api/data')
    const data = await response.json()
 
    props.setPlants(data)
@@ -49,12 +49,6 @@ useEffect(() => {
   }
     getData()
 }, [props.values.budget])
-
-
-
-
-
-
 
 
  // || Setting the steps 
