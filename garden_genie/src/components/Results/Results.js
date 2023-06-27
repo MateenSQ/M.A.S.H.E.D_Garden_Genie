@@ -137,7 +137,7 @@ function Results(props) {
       </div>
 
       <div className="row align-items-center">
-        <div className="card-group">
+        <div className="card-group2">
 
           <Card
             indexArray
@@ -168,10 +168,11 @@ function Results(props) {
         </div>
       </div>
       <Link to="../form">
-        <button id="get-started" aria-label="Button that leads to Form">
-          Back
-        </button>
-      </Link>
+          <button id="get-started" className="centered-button btn btn-primary btn-lg larger-button green-button results-back-button" aria-label="Button that leads to Form">
+            Back
+          </button>
+        </Link>
+
     </div>
   );
 }

@@ -10,6 +10,7 @@
     background-color: transparent;
     border-color: #2f4b3f;
     color: #2f4b3f;
+    transform: scale(1.2);
   }
   
   a {

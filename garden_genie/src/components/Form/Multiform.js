@@ -5,6 +5,9 @@ import Region from "./Region";
 import Accessibility from "./Accessibility";
 import Budget from "./Budget";
 import logo from "../../images/Logo.png";
+import "./Form.css";
+
+
 
 function Multiform(props) {
 
@@ -85,7 +88,7 @@ const handleSubmit = () => {
 
  
       <div className="container d-flex justify-content-center align-items-center">
-        <div className="card p-3 w-50 mt-5">
+        <div id= "formcard" className="card p-3 w-50 mt-5 border border-primary rounded card-3d card-bigger">
           {
             {
               1: <Time handleChange={handleChange} values={props.values}/>,
@@ -97,13 +100,17 @@ const handleSubmit = () => {
           }
           <div className="d-flex justify-content-around px-5 mt-5">
             {step > 1 ? (
-              <button className="btn btn-warning" onClick={prevStep}>
+              
+              <button id = "back-button" className="btn btn-warning mx-3 btn-3d" onClick={prevStep}>
                 Back
               </button>
+              
             ) : null}
-            <button className="btn btn-warning" onClick={nextStep}>
+
+            <button id = "next-button" className="btn btn-warning mx-3 btn-3d" onClick={nextStep}>
               {step === 5 ? "Submit" : "Next"}
             </button>
+            
           </div>
         </div>
       </div>
