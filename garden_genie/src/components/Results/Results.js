@@ -1,12 +1,18 @@
 import logo from "../../images/Logo.png";
 //import "bootstrap/dist/css/bootstrap.min.css";
 import "./Results.css";
-import Card from './Cards.js'
-import { Link } from 'react-router-dom'
+import Card from "./Cards.js";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Results(props) {
+  const navigate = useNavigate();
 
-/*
+  const handleResultsClick = () => {
+    navigate("/plant-info");
+  };
+
+  /*
 Making a filter based on time
 
 user inputs:
@@ -30,128 +36,152 @@ Database choices:
 
 */
 
-function filterTime(item) {
-  if (props.values.time === 'minimum') {
-    return item.Properties.Maintenance === 'Low' && item.Properties.Watering === 'Low'
-  } else if (props.values.time === 'moderate') {
-    return (
-    (item.Properties.Maintenance === 'Low' && item.Properties.Watering === 'Low') || 
-    (item.Properties.Maintenance === 'Medium' && item.Properties.Watering === 'Moderate') ||
-    (item.Properties.Maintenance === 'Medium' && item.Properties.Watering === 'Low') ||
-    (item.Properties.Maintenance === 'Low' && item.Properties.Watering === 'Moderate')
-  )}
-  return true;
-}
-
-function filterSpace(item) {
-  if (props.values.space === 'indoors') {
-    return item.Properties.Size === 'Small' && item.Properties.GrowInPot === true && item.Properties.Indoor === true
-} else if (props.values.space === 'outdoors pots') {
-    return (
-      (item.Properties.Size === 'Small' && item.Properties.GrowInPot === true) || 
-      (item.Properties.Size === 'Medium' && item.Properties.GrowInPot === true) ||
-      (item.Properties.Size === 'Medium' && item.Properties.GrowInPot === false)
-      )
+  function filterTime(item) {
+    if (props.values.time === "minimum") {
+      return (
+        item.Properties.Maintenance === "Low" &&
+        item.Properties.Watering === "Low"
+      );
+    } else if (props.values.time === "moderate") {
+      return (
+        (item.Properties.Maintenance === "Low" &&
+          item.Properties.Watering === "Low") ||
+        (item.Properties.Maintenance === "Medium" &&
+          item.Properties.Watering === "Moderate") ||
+        (item.Properties.Maintenance === "Medium" &&
+          item.Properties.Watering === "Low") ||
+        (item.Properties.Maintenance === "Low" &&
+          item.Properties.Watering === "Moderate")
+      );
+    }
+    return true;
   }
-  return true;
-}
 
-function filterRegion(item) {
-  let plantRegion = item.Properties.Region
-  let userRegion = props.values.region
-  if (userRegion === 'north') {
-    return plantRegion === 'North' || plantRegion === 'All'
-  } else if (userRegion === 'midlands') {
-    return plantRegion === 'Midlands' || plantRegion === 'All'
-  } else if (userRegion === 'south') {
-    return plantRegion === 'South' || plantRegion === 'All'
+  function filterSpace(item) {
+    if (props.values.space === "indoors") {
+      return (
+        item.Properties.Size === "Small" &&
+        item.Properties.GrowInPot === true &&
+        item.Properties.Indoor === true
+      );
+    } else if (props.values.space === "outdoors pots") {
+      return (
+        (item.Properties.Size === "Small" &&
+          item.Properties.GrowInPot === true) ||
+        (item.Properties.Size === "Medium" &&
+          item.Properties.GrowInPot === true) ||
+        (item.Properties.Size === "Medium" &&
+          item.Properties.GrowInPot === false)
+      );
+    }
+    return true;
   }
-  return true;
-}
 
-function filterMobility(item) {
-  let plantMaint = item.Properties.Maintenance
-  let plantSize = item.Properties.Size
-  let userChoice = props.values.accessibility // 'yes', 'no'
-  if (userChoice === 'yes') {
-    return (
-      plantSize === 'Small' && plantMaint !== 'High'
-    )
+  function filterRegion(item) {
+    let plantRegion = item.Properties.Region;
+    let userRegion = props.values.region;
+    if (userRegion === "north") {
+      return plantRegion === "North" || plantRegion === "All";
+    } else if (userRegion === "midlands") {
+      return plantRegion === "Midlands" || plantRegion === "All";
+    } else if (userRegion === "south") {
+      return plantRegion === "South" || plantRegion === "All";
+    }
+    return true;
   }
-  return true;
-}
 
-  let filteredArray = props.plants.filter(filterTime).filter(filterSpace).filter(filterRegion).filter(filterMobility)
- 
+  function filterMobility(item) {
+    let plantMaint = item.Properties.Maintenance;
+    let plantSize = item.Properties.Size;
+    let userChoice = props.values.accessibility; // 'yes', 'no'
+    if (userChoice === "yes") {
+      return plantSize === "Small" && plantMaint !== "High";
+    }
+    return true;
+  }
+
+  let filteredArray = props.plants
+    .filter(filterTime)
+    .filter(filterSpace)
+    .filter(filterRegion)
+    .filter(filterMobility);
 
   let indexArray = [];
   let randomIndex = 0;
-   while (indexArray.length < 3) {
-    randomIndex = (Math.floor(Math.random() * filteredArray.length));
+  while (indexArray.length < 3) {
+    randomIndex = Math.floor(Math.random() * filteredArray.length);
     if (!indexArray.includes(randomIndex)) {
       indexArray.push(randomIndex);
     }
   }
-  
 
   // console.log('This is the index array:')
   // console.log(indexArray);
   //console.log(props.plants[indexArray[0]]);
 
-  console.log('props.plants.length:')
-  console.log(props.plants.length)
+  //console.log('props.plants.length:')
+  //console.log(props.plants.length)
 
-  
+  console.log("filteredArray[indexArray[0]].Name");
+  console.log(filteredArray[indexArray[0]].Name);
+
+  // function handleSelection() {
+  //   props.handlePlantSelection();
+  //   handleResultsClick();
+  // }
+
+  console.log(props.plants[0]._id)
+
   return (
-
     <div className="home">
-        <img src={logo} alt="Logo" className="logo img-fluid" onClick={props.handleLogoClick}/>
-        <div className="header">
-          <h5>Presenting your personalised gardening findings</h5>
-        </div>
-     
+      <img
+        src={logo}
+        alt="Logo"
+        className="logo img-fluid"
+        onClick={props.handleLogoClick}
+      />
+      <div className="header">
+        <h5>Presenting your personalised gardening findings</h5>
+      </div>
+
       <div className="row align-items-center">
         <div className="card-group">
-
-
           {/* {indexArray.map((item) => <Card key={item.index} />)} */}
 
-
-          <Card indexArray
-          imgSrc={filteredArray[indexArray[0]].CardInfo.Image}
-          imgAlt={filteredArray[indexArray[0]].CardInfo.Name} 
-          plantName={filteredArray[indexArray[0]].CardInfo.Name}
-          onClick={props.handleSelection}
-          value={filteredArray[indexArray[0]].Name}
+          <Card
+            indexArray
+            imgSrc={filteredArray[indexArray[0]].CardInfo.Image}
+            imgAlt={filteredArray[indexArray[0]].CardInfo.Name}
+            plantName={filteredArray[indexArray[0]].CardInfo.Name}
+            onClick={() => {navigate(`/plant-info?plantid=${props.plants[0]._id}`);}}
+            value={filteredArray[indexArray[0]].Name}
           />
 
-          <Card indexArray
-          imgSrc={props.plants[indexArray[1]].CardInfo.Image}
-          imgAlt={props.plants[indexArray[1]].CardInfo.Name} 
-          plantName={props.plants[indexArray[1]].CardInfo.Name}
-          onClick={props.handleResultsClick}
-          value={indexArray[1]}
+          <Card
+            indexArray
+            imgSrc={props.plants[indexArray[1]].CardInfo.Image}
+            imgAlt={props.plants[indexArray[1]].CardInfo.Name}
+            plantName={props.plants[indexArray[1]].CardInfo.Name}
+            onClick={props.handleResultsClick}
+            value={filteredArray[indexArray[1]].Name}
           />
 
-          <Card indexArray
-          imgSrc={props.plants[indexArray[2]].CardInfo.Image}
-          imgAlt={props.plants[indexArray[2]].CardInfo.Name} 
-          plantName={props.plants[indexArray[2]].CardInfo.Name}
-          onClick={props.handleResultsClick}
-          value={indexArray[2]}
+          <Card
+            indexArray
+            imgSrc={props.plants[indexArray[2]].CardInfo.Image}
+            imgAlt={props.plants[indexArray[2]].CardInfo.Name}
+            plantName={props.plants[indexArray[2]].CardInfo.Name}
+            onClick={props.handleResultsClick}
+            value={filteredArray[indexArray[2]].Name}
           />
-
         </div>
       </div>
       <Link to="../form">
-          <button id="get-started" aria-label="Button that leads to Form">
-            Back
-          </button>
-        </Link>
-
+        <button id="get-started" aria-label="Button that leads to Form">
+          Back
+        </button>
+      </Link>
     </div>
-    
-
   );
 }
 
@@ -170,8 +200,5 @@ function filterMobility(item) {
             </div>
           </div>
 */
-
-
-
 
 export default Results;
