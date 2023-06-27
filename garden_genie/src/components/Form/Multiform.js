@@ -5,13 +5,14 @@ import Region from "./Region";
 import Accessibility from "./Accessibility";
 import Budget from "./Budget";
 import logo from "../../images/Logo.png";
+import { ProgressBar } from "react-bootstrap";
 import "./Form.css";
-
 
 
 function Multiform(props) {
 
   const [step, setStep] = useState(1);
+  const progressPercentage = ((step - 1) / 4) * 100;
 
 // || Comparing the plants to user input
 
@@ -83,11 +84,13 @@ const handleSubmit = () => {
     return (
 
       
-      <div className=" vh-100">
+      <div className="vh-100">
         <img src={logo} alt="Logo" className="logo img-fluid" onClick={props.handleLogoClick}/>
-
- 
+        <div className="progress-bar-container d-flex justify-content-center align-items-center">
+        <ProgressBar now={progressPercentage} variant="success" className="progress-bar-space" /> 
+        </div>
       <div className="container d-flex justify-content-center align-items-center">
+    
         <div id= "formcard" className="card p-3 w-50 mt-5 border border-primary rounded card-3d card-bigger">
           {
             {

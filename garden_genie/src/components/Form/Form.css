@@ -80,7 +80,9 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
   }
-
- 
-
   
+  .progress-bar-space {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    width: 50%;
+    margin: 20px;
+  }
