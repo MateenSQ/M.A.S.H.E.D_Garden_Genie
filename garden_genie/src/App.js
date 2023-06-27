@@ -6,6 +6,7 @@ import Results from "./components/Results/Results.js";
 import PlantInfo from "./components/PlantInfo/PlantInfo.js";
 
 function App() {
+  
   // || STATES
 
   const [plants, setPlants] = useState([]);
