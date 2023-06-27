@@ -75,7 +75,7 @@ console.log(props.plants.filter((item) => {return item.Properties.Maintenance ==
         </div>
      
       <div className="row align-items-center">
-        <div className="card-group">
+        <div className="card-group2">
 
           <Card 
           imgSrc="https://www.almanac.com/sites/default/files/styles/or/public/image_nodes/sunflower-1627193_1920.jpg?itok=td7mL8qA"
@@ -101,7 +101,7 @@ console.log(props.plants.filter((item) => {return item.Properties.Maintenance ==
         </div>
       </div>
       <Link to="../form">
-          <button id="get-started" aria-label="Button that leads to Form">
+          <button className="centered-button btn btn-primary btn-lg larger-button green-button results-back-button" aria-label="Button that leads to Form">
             Back
           </button>
         </Link>
