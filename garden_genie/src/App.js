@@ -30,8 +30,6 @@ function App() {
     navigate("/");
   };
 
-
-
   return (
     <Routes>
       <Route
@@ -64,7 +62,7 @@ function App() {
       ></Route>
 
       <Route
-        path="plant-info"
+        path="plant-info/:plantid"
         element={
           <PlantInfo plants={plants} handleLogoClick={handleLogoClick} />
         }

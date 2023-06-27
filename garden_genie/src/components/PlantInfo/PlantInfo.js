@@ -1,6 +1,6 @@
 import logo from "../../images/Logo.png";
 import "./PlantInfo.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 /*
@@ -16,14 +16,17 @@ import { Link } from "react-router-dom";
 
 function PlantInfo(props) {
 
-  console.log('props.selectPlantName:')
-  console.log(props.selectPlantName)
+  // const params = useParams()
+  // const plantId = params.plantid
+  // console.log(plantId)
+
+  const { plantid } = useParams();
+
+  let plantIndex = 0
 
   for (let i = 0; i < props.plants.length; i++) {
-    if (props.plants[i].Name === props.selectPlantName) {
-      console.log('Ladies and Gentlemen, we got him:')
-      console.log(props.plants[i])
-      return props.plants[i]
+    if (props.plants[i]._id === plantid) {
+       plantIndex = i
     }
   }
 
@@ -41,7 +44,7 @@ function PlantInfo(props) {
               alt="..."
             />
             <div className="card-body">
-              <h3 id="card-title">Sunflower</h3>
+              <h3 id="card-title">{props.plants[plantIndex].Name}</h3>
               <ul className="card-info">
                 <li>When To Plant</li>
                 <li>Sun Requirements</li>

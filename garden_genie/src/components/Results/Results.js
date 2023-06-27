@@ -130,7 +130,9 @@ Database choices:
   //   handleResultsClick();
   // }
 
-  console.log(props.plants[0]._id)
+  //console.log(props.plants[0]._id)
+
+  // || original: navigate(`/plant-info?plantid=${props.plants[0]._id}`);
 
   return (
     <div className="home">
@@ -153,7 +155,7 @@ Database choices:
             imgSrc={filteredArray[indexArray[0]].CardInfo.Image}
             imgAlt={filteredArray[indexArray[0]].CardInfo.Name}
             plantName={filteredArray[indexArray[0]].CardInfo.Name}
-            onClick={() => {navigate(`/plant-info?plantid=${props.plants[0]._id}`);}}
+            onClick={() => {navigate(`/plant-info/${props.plants[0]._id}`);}}
             value={filteredArray[indexArray[0]].Name}
           />
 
