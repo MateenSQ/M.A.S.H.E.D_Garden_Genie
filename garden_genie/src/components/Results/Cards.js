@@ -2,15 +2,8 @@
 
 function Card(props) {
 
-  //console.log('props.value:')
-  //console.log(props.value)
-
-  // const handleClick = () => {
-  //    props.onClick(props.value)
-  // }
-
   return (
-    <div className="card" onClick={props.onClick} data-div-id={props.value}>
+    <div className="card" onClick={props.onClick}>
       <img
         src={props.imgSrc}
         className="card-img-top"

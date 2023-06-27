@@ -5,14 +5,7 @@ import Card from "./Cards.js";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-function Results(props) {
-  const navigate = useNavigate();
-
-  const handleResultsClick = () => {
-    navigate("/plant-info");
-  };
-
-  /*
+/*
 Making a filter based on time
 
 user inputs:
@@ -35,6 +28,10 @@ Database choices:
 3. Return plants index that go through filter for further selection
 
 */
+
+function Results(props) {
+
+  const navigate = useNavigate();
 
   function filterTime(item) {
     if (props.values.time === "minimum") {
@@ -93,7 +90,7 @@ Database choices:
   function filterMobility(item) {
     let plantMaint = item.Properties.Maintenance;
     let plantSize = item.Properties.Size;
-    let userChoice = props.values.accessibility; // 'yes', 'no'
+    let userChoice = props.values.accessibility;
     if (userChoice === "yes") {
       return plantSize === "Small" && plantMaint !== "High";
     }
@@ -122,15 +119,8 @@ Database choices:
   //console.log('props.plants.length:')
   //console.log(props.plants.length)
 
-  console.log("filteredArray[indexArray[0]].Name");
-  console.log(filteredArray[indexArray[0]].Name);
-
-  // function handleSelection() {
-  //   props.handlePlantSelection();
-  //   handleResultsClick();
-  // }
-
-  //console.log(props.plants[0]._id)
+  // console.log("filteredArray[indexArray[0]].Name");
+  // console.log(filteredArray[indexArray[0]].Name);
 
   // || original: navigate(`/plant-info?plantid=${props.plants[0]._id}`);
 
@@ -148,32 +138,31 @@ Database choices:
 
       <div className="row align-items-center">
         <div className="card-group">
-          {/* {indexArray.map((item) => <Card key={item.index} />)} */}
 
           <Card
             indexArray
             imgSrc={filteredArray[indexArray[0]].CardInfo.Image}
             imgAlt={filteredArray[indexArray[0]].CardInfo.Name}
             plantName={filteredArray[indexArray[0]].CardInfo.Name}
-            onClick={() => {navigate(`/plant-info/${props.plants[0]._id}`);}}
+            onClick={() => {navigate(`/plant-info/${filteredArray[indexArray[0]]._id}`);}}
             value={filteredArray[indexArray[0]].Name}
           />
 
           <Card
             indexArray
-            imgSrc={props.plants[indexArray[1]].CardInfo.Image}
-            imgAlt={props.plants[indexArray[1]].CardInfo.Name}
-            plantName={props.plants[indexArray[1]].CardInfo.Name}
-            onClick={props.handleResultsClick}
+            imgSrc={filteredArray[indexArray[1]].CardInfo.Image}
+            imgAlt={filteredArray[indexArray[1]].CardInfo.Name}
+            plantName={filteredArray[indexArray[1]].CardInfo.Name}
+            onClick={() => {navigate(`/plant-info/${filteredArray[indexArray[1]]._id}`);}}
             value={filteredArray[indexArray[1]].Name}
           />
 
           <Card
             indexArray
-            imgSrc={props.plants[indexArray[2]].CardInfo.Image}
-            imgAlt={props.plants[indexArray[2]].CardInfo.Name}
-            plantName={props.plants[indexArray[2]].CardInfo.Name}
-            onClick={props.handleResultsClick}
+            imgSrc={filteredArray[indexArray[2]].CardInfo.Image}
+            imgAlt={filteredArray[indexArray[2]].CardInfo.Name}
+            plantName={filteredArray[indexArray[2]].CardInfo.Name}
+            onClick={() => {navigate(`/plant-info/${filteredArray[indexArray[2]]._id}`);}}
             value={filteredArray[indexArray[2]].Name}
           />
         </div>
@@ -186,21 +175,5 @@ Database choices:
     </div>
   );
 }
-
-/*
-<div className="card">
-            <img
-              src="https://www.muddytrowel.com/wp-content/uploads/2022/07/hydrangea-blue-2-e1657704030437.jpg"
-              className="card-img-top"
-              alt="..."
-            />
-            <div className="card-body">
-              <h3 className="card-title">Hydrangea</h3>
-
-              <Link to="plant-info" className="btn btn-primary stretched-link">Go to plant</Link>
-
-            </div>
-          </div>
-*/
 
 export default Results;
