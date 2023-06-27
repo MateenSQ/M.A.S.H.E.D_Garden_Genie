@@ -1,3 +1,8 @@
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+
 .centered-button {
     display: block;
     margin: 0 auto;
@@ -12,6 +17,15 @@
     color: #2f4b3f;
     transform: scale(1.2);
   }
+
+  .green-button:active,
+  .btn-primary:active {
+    background-color: #3f2a0d !important;
+    border-color: #3f2a0d !important;
+    color: #fff !important;
+    transform: scale(1.2);
+  }
+
   
   a {
     text-decoration: none;
@@ -36,14 +50,16 @@
   }
   
   .home-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
     color: #2f4b3f;
+    font-family: 'Darumadrop One', sans-serif;
   }
 
   .welcome {
-    font-size: 3rem;
-    color: #2F4B3F
+    font-size: 4rem;
+    color: #2F4B3F;
+    font-family: 'Darumadrop One', sans-serif;
   }
   
   #welcome-logo {

@@ -86,3 +86,9 @@
     width: 50%;
     margin: 20px;
   }
+
+.step-title {
+  font-size: 1.8em;
+  font-family: 'Darumadrop One', sans-serif;
+}
+

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Time from "./Time";
 import Space from "./Space";
 import Region from "./Region";
@@ -8,15 +8,13 @@ import logo from "../../images/Logo.png";
 import { ProgressBar } from "react-bootstrap";
 import "./Form.css";
 
-
 function Multiform(props) {
-
   const [step, setStep] = useState(1);
   const progressPercentage = ((step - 1) / 4) * 100;
 
-// || Comparing the plants to user input
+  // || Comparing the plants to user input
 
-/*
+  /*
 Making a filter based on time
 
 user inputs:
@@ -40,90 +38,99 @@ Database choices:
 
 */
 
-useEffect(() => {
- async function getData() {
-   const response = await fetch('https://gardengeniebackend.onrender.com/api/data')
-   const data = await response.json()
+  useEffect(() => {
+    async function getData() {
+      const response = await fetch(
+        "https://gardengeniebackend.onrender.com/api/data"
+      );
+      const data = await response.json();
 
-   props.setPlants(data)
-   console.log(props.plants)
-  }
-    getData()
-}, [props.values.budget])
+      props.setPlants(data);
+      console.log(props.plants);
+    }
+    getData();
+  }, [props.values.budget]);
 
+  // || Setting the steps
 
- // || Setting the steps 
+  const nextStep = () => {
+    if (step < 5) {
+      setStep(step + 1);
+    } else if (step === 5) {
+      handleSubmit();
+    }
+  };
 
+  const prevStep = () => {
+    if (step > 1) {
+      setStep(step - 1);
+    }
+  };
 
-const nextStep = () => {
-  if (step < 5) {
-    setStep(step + 1);
-  } 
-  else if(step === 5) {
-    handleSubmit();
-  }
-};
+  const handleChange = (option) => (e) => {
+    props.setValues({ ...props.values, [option]: e.target.value });
+  };
 
-const prevStep = () => {
-  if (step > 1) {
-    setStep(step - 1);
-  }
-};
+  const handleSubmit = () => {
+    console.log(props.values);
+    props.onFormSubmit(props.values);
+  };
 
-const handleChange = (option) => (e) => {
-  props.setValues({ ...props.values, [option]: e.target.value });
-};
-
- 
-const handleSubmit = () => {
-  console.log(props.values);
-  props.onFormSubmit(props.values);
-};
-
-
-    return (
-
-      
-      <div className="vh-100">
-        <img src={logo} alt="Logo" className="logo img-fluid" onClick={props.handleLogoClick}/>
-        <div className="progress-bar-container d-flex justify-content-center align-items-center">
-        <ProgressBar now={progressPercentage} variant="success" className="progress-bar-space" /> 
-        </div>
+  return (
+    <div className="vh-100">
+      <img
+        src={logo}
+        alt="Logo"
+        className="logo img-fluid"
+        onClick={props.handleLogoClick}
+      />
+      <div className="progress-bar-container d-flex justify-content-center align-items-center">
+        <ProgressBar
+          now={progressPercentage}
+          variant="success"
+          className="progress-bar-space"
+        />
+      </div>
       <div className="container d-flex justify-content-center align-items-center">
-    
-        <div id= "formcard" className="card p-3 w-50 mt-5 border border-primary rounded card-3d card-bigger">
+        <div
+          id="formcard"
+          className="card p-3 w-50 mt-5 border border-primary rounded card-3d card-bigger"
+        >
           {
             {
-              1: <Time handleChange={handleChange} values={props.values}/>,
+              1: <Time handleChange={handleChange} values={props.values} />,
               2: <Space handleChange={handleChange} values={props.values} />,
-              3: <Region handleChange={handleChange} values={props.values}/>,
+              3: <Region handleChange={handleChange} values={props.values} />,
               4: <Accessibility handleChange={handleChange} values={props.values} />,
-              5: <Budget handleChange={handleChange} values={props.values}/>,
+              5: <Budget handleChange={handleChange} values={props.values} />,
             }[step]
           }
           <div className="d-flex justify-content-around px-5 mt-5">
             {step > 1 ? (
-              
-              <button id = "back-button" className="btn btn-warning mx-3 btn-3d" onClick={prevStep}>
+              <button
+                id="back-button"
+                className="btn btn-warning mx-3 btn-3d"
+                onClick={prevStep}
+              >
                 Back
               </button>
-              
             ) : null}
 
-            <button id = "next-button" className="btn btn-warning mx-3 btn-3d" onClick={nextStep}>
+            <button
+              id="next-button"
+              className="btn btn-warning mx-3 btn-3d"
+              onClick={nextStep}
+            >
               {step === 5 ? "Submit" : "Next"}
             </button>
-            
           </div>
         </div>
       </div>
     </div>
+  );
+}
 
-    );
-  }
-  
 export default Multiform;
-
 
 /* 1)Will you have time to the maintain garden? Please circle or explain. (min, mod, high)
 2) Space - indoors or outdoors pots or in ground

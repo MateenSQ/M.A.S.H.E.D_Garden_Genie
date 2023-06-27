@@ -1,23 +1,24 @@
 import React from "react";
-import { Form, OverlayTrigger, ProgressBar, Tooltip } from "react-bootstrap";
+import { Form, OverlayTrigger, Tooltip } from "react-bootstrap";
 
 const tooltipText =
   "Depending on your available space, we can recommend indoor or outdoor plants, or plants that can be kept in pots.";
 
 const Space = ({ handleChange, values }) => {
   return (
-    <div className="d-flex flex-column align-items-center">
-      <h2>
-        Space
-        <OverlayTrigger
-          placement="bottom"
-          overlay={<Tooltip id="tooltip">{tooltipText}</Tooltip>}
-        >
-          <sup>
-            <i className="fas fa-info-circle ml-2"></i>
-          </sup>
-        </OverlayTrigger>
-      </h2>
+    <div className="space-container d-flex flex-column align-items-center">
+        <h2 className="step-title text-center">
+          Space
+          <OverlayTrigger
+            className="step-title"
+            placement="bottom"
+            overlay={<Tooltip id="tooltip">{tooltipText}</Tooltip>}
+          >
+            <sup>
+              <i className="fas fa-info-circle ml-2"></i>
+            </sup>
+          </OverlayTrigger>
+        </h2>
       <p>What type of space do you have available?</p>
 
       <Form.Group className="w-75 mt-4">

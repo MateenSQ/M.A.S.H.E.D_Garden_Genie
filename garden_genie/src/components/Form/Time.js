@@ -7,9 +7,10 @@ const tooltipText =
 const Time = ({ handleChange, values }) => {
   return (
     <div className="d-flex flex-column align-items-center">
-      <h2>
+      <h2 className="step-title">
         Time
         <OverlayTrigger
+          className="step-title"
           placement="bottom"
           overlay={<Tooltip id="tooltip">{tooltipText}</Tooltip>}
         >
