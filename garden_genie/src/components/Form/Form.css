@@ -41,7 +41,7 @@
 }
 
 .card-3d:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
 #back-button {
@@ -68,6 +68,8 @@
 
 #back-button:hover, #next-button:hover {
     transform: scale(1.2);
+    background-color: transparent;
+    
   }
 
   .card-3d {
@@ -81,6 +83,11 @@
     border-radius: 5px;
   }
 
- 
-
+  .logo {
+    transition: transform 0.3s ease;
+  }
+  
+  .logo:hover {
+    transform: scale(1.1);
+  }
   
