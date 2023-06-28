@@ -8,10 +8,10 @@ const Region = ({ handleChange, values }) => {
   return (
     <div className="d-flex flex-column align-items-center">
       <h2 className="step-title">
-        Region
+      <span className="bloom-font">R</span>egion
         <OverlayTrigger
           className="step-title"
-          placement="bottom"
+          placement="right-end"
           overlay={<Tooltip id="tooltip">{tooltipText}</Tooltip>}
         >
           <sup>

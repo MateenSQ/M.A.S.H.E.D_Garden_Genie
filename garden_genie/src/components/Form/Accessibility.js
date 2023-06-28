@@ -8,10 +8,10 @@ const Accessibility = ({ handleChange, values }) => {
   return (
     <div className="d-flex flex-column align-items-center">
       <h2 className="step-title">
-        Mobility
+      <span className="bloom-font">M</span>obility
         <OverlayTrigger
           className="step-title"
-          placement="bottom"
+          placement="right-end"
           overlay={<Tooltip id="tooltip">{tooltipText}</Tooltip>}
         >
           <sup>
@@ -27,8 +27,7 @@ const Accessibility = ({ handleChange, values }) => {
           label="Yes"
           onChange={handleChange("accessibility")}
           checked={values.accessibility === "yes"}
-          aria-labelledby="Radio button choice for yes"
-          required // Add the required attribute
+          aria-labelledby="Radio button choice for mobility issues yes"
         />
         <Form.Check
           value="no"
@@ -36,8 +35,7 @@ const Accessibility = ({ handleChange, values }) => {
           label="No"
           onChange={handleChange("accessibility")}
           checked={values.accessibility === "no"}
-          aria-labelledby="Radio button choice for no"
-          required // Add the required attribute
+          aria-labelledby="Radio button choice for mobility issues no"
         />
       </Form.Group>
     </div>

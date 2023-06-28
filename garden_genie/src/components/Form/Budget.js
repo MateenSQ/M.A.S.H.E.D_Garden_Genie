@@ -8,10 +8,10 @@ const Budget = ({ handleChange, values }) => {
   return (
     <div className="d-flex flex-column align-items-center">
       <h2 className="step-title">
-        Budget
+      <span className="bloom-font">B</span>udget
         <OverlayTrigger
           className="step-title"
-          placement="bottom"
+          placement="right-end"
           overlay={<Tooltip id="tooltip">{tooltipText}</Tooltip>}
         >
           <sup>
@@ -28,7 +28,7 @@ const Budget = ({ handleChange, values }) => {
           label="Yes"
           onChange={handleChange("budget")}
           checked={values.budget === "yes"}
-          aria-labelledby="Radio button choice for budget yes"
+          aria-labelledby="Radio button choice for budget issues yes"
         ></Form.Check>
         <Form.Check
           value="no"
@@ -36,7 +36,7 @@ const Budget = ({ handleChange, values }) => {
           label="No"
           onChange={handleChange("budget")}
           checked={values.budget === "no"}
-          aria-labelledby="Radio button choice for budget no"
+          aria-labelledby="Radio button choice for budget issues no"
         ></Form.Check>
       </Form.Group>
     </div>

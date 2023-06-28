@@ -80,7 +80,7 @@ Database choices:
     <div className="vh-100">
       <img
         src={logo}
-        alt="Logo"
+        alt="garden genie logo"
         className="logo img-fluid"
         onClick={props.handleLogoClick}
       />
@@ -89,6 +89,7 @@ Database choices:
           now={progressPercentage}
           variant="success"
           className="progress-bar-space"
+          aria-label="form-progress-bar"
         />
       </div>
       <div className="container d-flex justify-content-center align-items-center">
@@ -110,6 +111,7 @@ Database choices:
               <button
                 id="back-button"
                 className="btn btn-warning mx-3 btn-3d"
+                aria-label="back-button"
                 onClick={prevStep}
               >
                 Back
@@ -119,6 +121,7 @@ Database choices:
             <button
               id="next-button"
               className="btn btn-warning mx-3 btn-3d"
+              aria-label="next-button"
               onClick={nextStep}
             >
               {step === 5 ? "Submit" : "Next"}
@@ -131,11 +134,3 @@ Database choices:
 }
 
 export default Multiform;
-
-/* 1)Will you have time to the maintain garden? Please circle or explain. (min, mod, high)
-2) Space - indoors or outdoors pots or in ground
-3) Region- North, South, Midlands 
-4) Do you have difficulties with your mobility- yes or no
-5) Budget/ start up costs
-
-*/

@@ -7,6 +7,13 @@ body {
   align-items: center;
 }
 
+.header {
+  font-size: 6rem;
+  text-align: center;
+  color: #2f4b3f;
+  font-family: 'Darumadrop One', sans-serif;
+}
+
 .home {
   background-image: url("../../images/Background.png");
   background-size: cover;
@@ -21,6 +28,7 @@ body {
   padding-left: 8%;
   padding-top: 1%;
   height: auto;
+  cursor: pointer;
 }
 
 .card-group2 {
@@ -55,6 +63,8 @@ body {
  
   margin-left: 1rem;
   margin-right: 1rem;
+
+  cursor: pointer;
 }
 
 .card img {
@@ -75,6 +85,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 1%;
+  cursor: pointer;
 }
 
 #get-started {

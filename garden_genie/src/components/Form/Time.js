@@ -8,10 +8,10 @@ const Time = ({ handleChange, values }) => {
   return (
     <div className="d-flex flex-column align-items-center">
       <h2 className="step-title">
-        Time
+      <span className="bloom-font">T</span>ime
         <OverlayTrigger
           className="step-title"
-          placement="bottom"
+          placement="right-end"
           overlay={<Tooltip id="tooltip">{tooltipText}</Tooltip>}
         >
           <sup>

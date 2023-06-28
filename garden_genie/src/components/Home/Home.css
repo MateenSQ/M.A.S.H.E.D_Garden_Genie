@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'PlantsAndFlowersRegular'; 
+  src: url('../../fonts/PlantsAndFlowersRegular.ttf');
+}
+
+@font-face {
+  font-family: 'SummerGardening'; 
+  src: url('../../fonts/SummerGardening.ttf');
+}
+
+
 body {
   font-family: "Quicksand", sans-serif;
 }
@@ -16,6 +27,7 @@ body {
     border-color: #2f4b3f;
     color: #2f4b3f;
     transform: scale(1.2);
+    cursor: pointer;
   }
 
   .green-button:active,
@@ -39,6 +51,7 @@ body {
   .logo-container {
     display: flex;
     justify-content: center;
+    cursor: pointer;
   }
   
   
