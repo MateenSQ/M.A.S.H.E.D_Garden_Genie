@@ -133,7 +133,7 @@ function Results(props) {
         onClick={props.handleLogoClick}
       />
       <div className="header">
-        <h5>Presenting your personalised gardening findings</h5>
+        <h2>Presenting your personalised gardening findings:</h2>
       </div>
 
       <div className="row align-items-center">
@@ -146,6 +146,7 @@ function Results(props) {
             plantName={filteredArray[indexArray[0]].CardInfo.Name}
             onClick={() => {navigate(`/plant-info/${filteredArray[indexArray[0]]._id}`);}}
             value={filteredArray[indexArray[0]].Name}
+            aria-label="clickable card for first recommended plant"
           />
 
           <Card
@@ -155,6 +156,7 @@ function Results(props) {
             plantName={filteredArray[indexArray[1]].CardInfo.Name}
             onClick={() => {navigate(`/plant-info/${filteredArray[indexArray[1]]._id}`);}}
             value={filteredArray[indexArray[1]].Name}
+            aria-label="clickable card for second recommended plant"
           />
 
           <Card
@@ -164,11 +166,12 @@ function Results(props) {
             plantName={filteredArray[indexArray[2]].CardInfo.Name}
             onClick={() => {navigate(`/plant-info/${filteredArray[indexArray[2]]._id}`);}}
             value={filteredArray[indexArray[2]].Name}
+            aria-label="clickable card for third recommended plant"
           />
         </div>
       </div>
       <Link to="../form">
-          <button id="get-started" className="centered-button btn btn-primary btn-lg larger-button green-button results-back-button" aria-label="Button that leads to Form">
+          <button id="get-started" className="centered-button btn btn-primary btn-lg larger-button green-button results-back-button" aria-label="Button that leads back to the beginning of the Form">
             Back
           </button>
         </Link>

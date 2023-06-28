@@ -11,7 +11,7 @@ function Home(props) {
       <div className="home">
         <h2 className="welcome">Welcome to</h2>
         <div className="logo-container"> 
-        <img src={logo} alt='Logo' className="logo img-fluid" id= "welcome-logo" onClick={props.handleLogoClick}/>
+        <img src={logo} alt='garden genie ogo' className="logo img-fluid" id="welcome-logo" onClick={props.handleLogoClick}/>
         </div>
         <p className= "home-title">Making your gardening dreams bloom!</p>
         <Link to="form">
