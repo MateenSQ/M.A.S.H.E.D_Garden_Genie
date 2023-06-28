@@ -84,7 +84,7 @@ const handleSubmit = () => {
 
       
       <div className=" vh-100">
-        <img src={logo} alt="Logo" className="logo img-fluid" onClick={props.handleLogoClick}/>
+        <img src={logo} alt="Logo" className="logo img-fluid hoverable" onClick={props.handleLogoClick}/>
 
  
       <div className="container d-flex justify-content-center align-items-center">
