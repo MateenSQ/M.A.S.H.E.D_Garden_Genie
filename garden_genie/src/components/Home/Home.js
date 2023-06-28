@@ -13,9 +13,9 @@ function Home(props) {
         <div className="logo-container"> 
         <img src={logo} alt='garden genie ogo' className="logo img-fluid" id="welcome-logo" onClick={props.handleLogoClick}/>
         </div>
-        <p class= "home-title">Making your gardening dreams bloom!</p>
+        <p className= "home-title">Making your gardening dreams bloom!</p>
         <Link to="form">
-          <button id="get_started" class="centered-button btn btn-primary btn-lg larger-button green-button" data-toggle="button" aria-pressed="false" aria-label="Button that leads to Form" >Get started</button>
+          <button id="get_started" className="centered-button btn btn-primary btn-lg larger-button green-button" data-toggle="button" aria-pressed="false" aria-label="Button that leads to Form" >Get started</button>
         </Link>
        </div>
     );

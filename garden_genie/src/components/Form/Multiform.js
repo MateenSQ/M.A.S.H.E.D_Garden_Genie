@@ -92,6 +92,7 @@ Database choices:
           aria-label="form-progress-bar"
         />
       </div>
+
       <div className="container d-flex justify-content-center align-items-center">
         <div
           id="formcard"
