@@ -19,7 +19,7 @@ const Budget = ({ handleChange, values }) => {
           </sup>
         </OverlayTrigger>
       </h2>
-      <p>Are you facing budget constraints that could limit your gardening??</p>
+      <p id= "budgetp">Are you facing budget constraints that could limit your gardening??</p>
 
       <Form.Group className="w-75 mt-4">
         <Form.Check
