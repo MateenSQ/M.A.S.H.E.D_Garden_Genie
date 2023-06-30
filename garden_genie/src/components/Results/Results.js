@@ -30,7 +30,6 @@ Database choices:
 */
 
 function Results(props) {
-
   const navigate = useNavigate();
 
   function filterTime(item) {
@@ -136,47 +135,61 @@ function Results(props) {
         <h2>Presenting your personalised gardening findings:</h2>
       </div>
 
-      <div className="row align-items-center">
-        <div className="card-group2">
-
-          <Card
-            indexArray
-            imgSrc={filteredArray[indexArray[0]].CardInfo.Image}
-            imgAlt={filteredArray[indexArray[0]].CardInfo.Name}
-            plantName={filteredArray[indexArray[0]].CardInfo.Name}
-            onClick={() => {navigate(`/plant-info/${filteredArray[indexArray[0]]._id}`);}}
-            value={filteredArray[indexArray[0]].Name}
-            aria-label="clickable card for first recommended plant"
-          />
-
-          <Card
-            indexArray
-            imgSrc={filteredArray[indexArray[1]].CardInfo.Image}
-            imgAlt={filteredArray[indexArray[1]].CardInfo.Name}
-            plantName={filteredArray[indexArray[1]].CardInfo.Name}
-            onClick={() => {navigate(`/plant-info/${filteredArray[indexArray[1]]._id}`);}}
-            value={filteredArray[indexArray[1]].Name}
-            aria-label="clickable card for second recommended plant"
-          />
-
-          <Card
-            indexArray
-            imgSrc={filteredArray[indexArray[2]].CardInfo.Image}
-            imgAlt={filteredArray[indexArray[2]].CardInfo.Name}
-            plantName={filteredArray[indexArray[2]].CardInfo.Name}
-            onClick={() => {navigate(`/plant-info/${filteredArray[indexArray[2]]._id}`);}}
-            value={filteredArray[indexArray[2]].Name}
-            aria-label="clickable card for third recommended plant"
-          />
+      <div className="row justify-content-center">
+        <div className="card-group2 centered-row">
+          <div className="card-1 col-md-4 align-items-center">
+            <Card
+              indexArray
+              imgSrc={filteredArray[indexArray[0]].CardInfo.Image}
+              imgAlt={filteredArray[indexArray[0]].CardInfo.Name}
+              plantName={filteredArray[indexArray[0]].CardInfo.Name}
+              onClick={() => {
+                navigate(`/plant-info/${filteredArray[indexArray[0]]._id}`);
+              }}
+              value={filteredArray[indexArray[0]].Name}
+              aria-label="clickable card for first recommended plant"
+            />
+          </div>
+          <div className="card-2 col-md-4 align-items-center">
+            <Card
+              indexArray
+              imgSrc={filteredArray[indexArray[1]].CardInfo.Image}
+              imgAlt={filteredArray[indexArray[1]].CardInfo.Name}
+              plantName={filteredArray[indexArray[1]].CardInfo.Name}
+              onClick={() => {
+                navigate(`/plant-info/${filteredArray[indexArray[1]]._id}`);
+              }}
+              value={filteredArray[indexArray[1]].Name}
+              aria-label="clickable card for second recommended plant"
+            />
+          </div>
+          <div className="card-3 col-md-4 align-items-center">
+            <Card
+              indexArray
+              imgSrc={filteredArray[indexArray[2]].CardInfo.Image}
+              imgAlt={filteredArray[indexArray[2]].CardInfo.Name}
+              plantName={filteredArray[indexArray[2]].CardInfo.Name}
+              onClick={() => {
+                navigate(`/plant-info/${filteredArray[indexArray[2]]._id}`);
+              }}
+              value={filteredArray[indexArray[2]].Name}
+              aria-label="clickable card for third recommended plant"
+            />
+          </div>
         </div>
       </div>
+      
       <Link to="../form">
-          <button id="get-started" className="centered-button btn btn-primary btn-lg larger-button green-button results-back-button" aria-label="Button that leads back to the beginning of the Form">
-            Back
-          </button>
-        </Link>
-
-    </div>
+        <button 
+          id="get-started"
+          className="centered-button btn btn-primary btn-lg larger-button green-button results-back-button"
+          aria-label="Button that leads back to the beginning of the Form"
+        >
+          Back
+        </button>
+      </Link>
+      </div>
+    
   );
 }
 

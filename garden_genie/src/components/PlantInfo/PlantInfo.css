@@ -1,89 +1,90 @@
-/* :root {
-  --bgcolor: #f3fff9;
+/* PlantInfo.css */
+
+.accordion {
+  width: 800px;
 }
 
-body {
-  background-color: var(--bgcolor);
-  margin: 0;
+/* PlantInfo.css */
+
+.accordion-button {
+  background-color: #f8f9fa;
+  color: #212529;
+  font-weight: 500;
+  text-align: left;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  font-size: 20px;
+}
+
+.accordion-button:hover {
+  background-color: #cdf7e8;
+}
+
+.accordion-body {
+  background-color: #f8f9fa;
+  color: #212529;
+  padding: 15px;
+  border: none;
+  border-top: 1px solid #dee2e6;
+  border-radius: 0;
+  font-size: 18px;
+}
+
+/* PlantInfo.css */
+
+.accordion-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgb(24, 126, 24);
+  color : white;
+}
+
+.accordion-button:not(.collapsed):hover {
+  background-color: rgb(24, 126, 24);
+}
+
+
+#get-started-plant {
+  background-color: #E0F5DB !important;
+  border-color: transparent;
+  outline: none;
+  color: #008558;
+  transition: transform 0.3s ease;
+  font-size: 20px;
+}
+
+#get-started-plant:hover {
+  transform: scale(1.2);
+  background-color: transparent;
+  cursor: pointer
 }
 
 .home {
-  background-image: url("../../images/Background.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  position: sticky;
   height: 100vh;
+  overflow-y: auto;
+  /* background-image: url('your-backg'); */
+  background-size: cover;
 }
 
-.logo {
-  max-width: 22%;
-  padding-left: 8%;
+.logo-plant-info {
+  max-width: 17%;
+  margin: 0;
+  display: block;
   padding-top: 1%;
   height: auto;
+  cursor: pointer;
+  position: absolute; /* Add this line to position the logo */
+  top: 0; /* Add this line to position the logo */
+  left: 0; /* Add this line to position the logo */
+  transition: transform 0.3s ease;
 }
 
-.card-group {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  max-width: 99%;
-  width: 80%;
-  text-align: left;
-  margin: auto;
+.logo-plant-info:hover {
+  transform: scale(1.1);
+  cursor: pointer
 }
-
-.card {
-  width: 200px;
-  height: auto;
-  border: transparent;
-  border-radius: 2%;
-  overflow: hidden;
-  display: flex;
-  justify-content: left;
-  align-items: left;
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.card img {
-  width: 40%;
-  height: 100%;
-  object-fit: cover;
-  align-self: left;
-}
-
-.card-body {
-  max-width: 99%;
-  width: 80%;
-  text-align: left;
-  margin: auto;
-}
-
-.card-title {
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.card-info li::before {
-  padding-bottom: 24%;
-}
-
-#get-started {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1%;
-  background-color: #e8f4dc;
-  border-radius: 15%;
-  padding-left: 4%;
-  padding-right: 4%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-color: rgba(0, 0, 0, 0);
-  text-decoration: unset;
-  color: #39825b;
-  font-size: 100%;
-} */
