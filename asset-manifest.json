@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/M.A.S.H.E.D_Garden_Genie/static/css/main.d7fb069d.css",
+    "main.js": "/M.A.S.H.E.D_Garden_Genie/static/js/main.8097a998.js",
+    "static/js/787.46d7333e.chunk.js": "/M.A.S.H.E.D_Garden_Genie/static/js/787.46d7333e.chunk.js",
+    "static/media/Background.png": "/M.A.S.H.E.D_Garden_Genie/static/media/Background.3dd6bdca660f20a6eef0.png",
+    "static/media/Logo.png": "/M.A.S.H.E.D_Garden_Genie/static/media/Logo.33db09252734eee85f05.png",
+    "static/media/PlantsAndFlowersRegular.ttf": "/M.A.S.H.E.D_Garden_Genie/static/media/PlantsAndFlowersRegular.4104331d6bc0df631593.ttf",
+    "static/media/SummerGardening.ttf": "/M.A.S.H.E.D_Garden_Genie/static/media/SummerGardening.6f7e42535f9e8df04963.ttf",
+    "index.html": "/M.A.S.H.E.D_Garden_Genie/index.html",
+    "main.d7fb069d.css.map": "/M.A.S.H.E.D_Garden_Genie/static/css/main.d7fb069d.css.map",
+    "main.8097a998.js.map": "/M.A.S.H.E.D_Garden_Genie/static/js/main.8097a998.js.map",
+    "787.46d7333e.chunk.js.map": "/M.A.S.H.E.D_Garden_Genie/static/js/787.46d7333e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d7fb069d.css",
+    "static/js/main.8097a998.js"
+  ]
+}
