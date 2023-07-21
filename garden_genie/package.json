@@ -2,7 +2,7 @@
   "name": "garden_genie",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://MateenSQ.github.io/M.A.S.H.E.D_Garden_Genie",
+  "homepage": "https://MateenSQ.github.io/M.A.S.H.E.D_Garden_Genie/garden_genie",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/user-event": "^13.5.0",
