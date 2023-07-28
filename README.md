@@ -2,6 +2,8 @@
 
 ## Intro
 
+Click for the app: <a href="https://garden-genie.netlify.app" target="_blank">Online Student Handbook!</a>
+
 Produced by M.A.S.H.E.D:
 <ul>
     <li><a href="https://github.com/MateenSQ">Mateen Qureshi</a></li>
