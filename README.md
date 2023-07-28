@@ -26,12 +26,12 @@ The toughest thing we ever did on the bootcamp - we learnt a lot, debugged a lot
 
 <ul>
     <li>React.js</li>
-    <li>Bootstrap</li>
     <li>CSS</li>
+    <li>Bootstrap</li>
     <li>Testing Library</li>
     <li>Express.js</li>
-    <li>Mongoose</li>
     <li>MongoDB</li>
+    <li>Mongoose</li>
 </ul>
 
 ## About
