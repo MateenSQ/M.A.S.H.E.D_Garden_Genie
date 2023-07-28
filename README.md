@@ -2,7 +2,7 @@
 
 ## Intro
 
-Click for the app: <a href="https://garden-genie.netlify.app" target="_blank">Online Student Handbook!</a>
+Click for the app: <a href="https://garden-genie.netlify.app" target="_blank">Garden Genie!</a>
 
 Produced by M.A.S.H.E.D:
 <ul>
