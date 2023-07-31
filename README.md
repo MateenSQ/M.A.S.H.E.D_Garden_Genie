@@ -1,5 +1,14 @@
 # Garden Genie by M.A.S.H.E.D
 
+## Contents
+
+- [Intro](#intro)
+- [Website](#website)
+- [Technology](#technology)
+- [About](#about)
+- [Use](#use)
+- [Future Goals](#future-goals)
+
 ## Intro
 
 Produced by M.A.S.H.E.D:
@@ -22,6 +31,10 @@ Presentations to partnership companies and all those interested in our project.
 
 The toughest thing we ever did on the bootcamp - we learnt a lot, debugged a lot and actually laughed a lot!
 
+## Website
+
+You can find the website <a href="https://garden-genie.netlify.app/">here</a>!
+
 ## Technology
 
 <ul>
@@ -36,7 +49,7 @@ The toughest thing we ever did on the bootcamp - we learnt a lot, debugged a lot
 
 ## About
 
-We were given the great task of solving any real world problem with an app. A question that brought a lot of discussion as everyone in the team had great perspectives on many things we could solve.
+We were given the great task of solving any real world problem with an app. A question that brought a lot of discussion - light and heated -c  as everyone in the team had great perspectives on many things we could solve.
 
 Being 12 weeks into the bootcamp, we had spent time learning different concepts not limited to coding but also user & market considerations and teamwork.
 
