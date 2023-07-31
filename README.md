@@ -11,6 +11,8 @@
 
 ## Intro
 
+Click for the app: <a href="https://garden-genie.netlify.app" target="_blank">Garden Genie!</a>
+
 Produced by M.A.S.H.E.D:
 <ul>
     <li><a href="https://github.com/MateenSQ">Mateen Qureshi</a></li>
@@ -39,12 +41,12 @@ You can find the website <a href="https://garden-genie.netlify.app/">here</a>!
 
 <ul>
     <li>React.js</li>
-    <li>Bootstrap</li>
     <li>CSS</li>
+    <li>Bootstrap</li>
     <li>Testing Library</li>
     <li>Express.js</li>
-    <li>Mongoose</li>
     <li>MongoDB</li>
+    <li>Mongoose</li>
 </ul>
 
 ## About
@@ -65,9 +67,9 @@ We pulled through, managing to deliver our MVP and more!
 
 ## Use
 
-Have you ever wanted to start gardening? Of course you have! Gardening is a gentle and colourful hobby that rewards patience and perseverance. The only problems are that you may not have the time, energy, space, experience or money.
+Have you ever wanted to start gardening? Of course you have! Gardening is a gentle and colourful hobby that rewards patience and perseverance. The only problems are that you may not have the time, energy, space, experience <em>or</em> money.
 
-So actually, there can be quite a few problems. You can research and research but that in itself is off putting - so many plants to choose from, which one is right for me? Why is it so hard to start?
+... So actually, there can be quite a few problems. You can research and research but that in itself is off putting - so many plants to choose from, which one is right for me? Why is it so hard to start?
 
 But what if there was something, able to give you personalized plant recommendations?
 
