@@ -41,6 +41,13 @@ The toughest thing we ever did on the bootcamp - we learnt a lot, debugged a lot
 
 You can find the website here: <a href="https://garden-genie.netlify.app/">Garden Genie</a>!
 
+There is a known issue where the app occasionally doesn't progress past the form page. The quick fix is to:
+
+1. Complete the form and press submit.
+2. If it freezes, close the tab.
+3. Click on the link above to enter the website again.
+4. The form will work as expected.
+
 ## Technology
 
 <ul>
