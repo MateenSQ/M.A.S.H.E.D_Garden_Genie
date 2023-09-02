@@ -8,16 +8,17 @@
 - [About](#about)
 - [Use](#use)
 - [Parts of the Process](#parts-of-the-process)
-    - [App Journey](#app-journey)
-    - [User Research](#user-research)
-        - [Prototyping](#prototyping)
-        - [Google Form](#google-form)
-    - [Future Goals](#future-goals)
-    - [Presentations](#presentations)
+  - [App Journey](#app-journey)
+  - [User Research](#user-research)
+    - [Prototyping](#prototyping)
+    - [Google Form](#google-form)
+  - [Future Goals](#future-goals)
+  - [Presentations](#presentations)
 
 ## Intro
 
 Produced by M.A.S.H.E.D:
+
 <ul>
     <li><a href="https://github.com/MateenSQ">Mateen Qureshi</a></li>
     <li><a href="https://github.com/AnastasiaAdamoudi">Anastasia Adamoudi</a></li>
@@ -44,8 +45,8 @@ You can find the website here: <a href="https://garden-genie.netlify.app/">Garde
 There is a known issue where the app occasionally doesn't progress past the form page. The quick fix is to:
 
 1. Complete the form and press submit.
-2. If it freezes, close the tab.
-3. Click on the link above to enter the website again.
+2. If it freezes, <em>FIRST</em> close the tab.
+3. <em>THEN</em> click on the link above to enter the website again.
 4. The form will work as expected.
 
 ## Technology
@@ -98,7 +99,6 @@ So, being tasked with creating an app that solves a problem faced by people in t
 
 We started from scratch and we needed a place to document all of our decisions, images, notes - <strong><em>everything</em></strong> - in one place.
 
-
 Someone on our team presented the extraordinary idea of putting it all on FigJam and to this day I am still amazed of how great of an idea it was! It contains almost everything regarding our plans for the app
 
 In addition to FigJam, to help us remember what we <strong>need</strong> to do but we haven't done yet, we used ol' reliable - Trello! For both our planning to-dos and coding tickets.
@@ -121,7 +121,6 @@ What our previous project team didn't achieve then we achieved in this project! 
 
 After manufacturing our <a href="https://www.figma.com/file/L83unF1dssVQp78w780aTX/Hi-Fi?type=design&mode=design&t=jMHFKd3ZuRZtb1DK-1">Hi-Fi</a>, we set up prototyping for potential users to interact with. Have a look here: <a href="https://www.figma.com/proto/L83unF1dssVQp78w780aTX/Hi-Fi?type=design&node-id=140-80&scaling=scale-down&page-id=0%3A1&starting-point-node-id=140%3A80&mode=design&t=IHXhBhSWhcJQvKJc-1">prototype</a>.
 
-
 ### Google Form
 
 With prototype in hand we were ready for user research.
@@ -143,7 +142,6 @@ In addition, we encouraged people to write down their opinions with long answer 
 <br>
 
 In case its unclear, the comment states that it would be nice to include a feature able to overview the months and select plants accordingly. Upon reading this, we realised we hadn't even included when to plant plants in our information section of the app! An essential piece of information that we may have missed otherwise
-
 
 ## Future Goals
 
